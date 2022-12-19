@@ -4,33 +4,33 @@ import java.math.RoundingMode;
 
 public class BigD {
     public static void main(String[] args) {
-        BigInteger num1 = new BigInteger("65498732165498745698");
-        BigInteger num2 = new BigInteger("65485275345777555412");
-        BigInteger resultAdd = num1.add(num2);
-        BigInteger resultSub = num1.subtract(num2);
-        BigInteger resultMult = num1.multiply(num2);
-        BigInteger resultDiv = num2.divide(num1);
-        BigInteger resultRem = num2.remainder(num1);
+        BigInteger a = new BigInteger("65498732165498745698");
+        BigInteger b = new BigInteger("65485275345777555412");
+        BigInteger resultAdd = a.add(b);
         System.out.println("Сумма целых числел равна: " + resultAdd);
+        BigInteger resultSub = a.subtract(b);
         System.out.println("Разница целых числел равна: " + resultSub);
+        BigInteger resultMult = a.multiply(b);
         System.out.println("Произведение целых числел равно: " + resultMult);
+        BigInteger resultDiv = a.divide(b);
         System.out.println("Деление целых числел равно: " + resultDiv);
+        BigInteger resultRem = a.remainder(b);
         System.out.println("Остаток от деления целых числел равен: " + resultRem);
-        System.out.println();
-        BigDecimal num3 = new BigDecimal("65498732165498745698.231");
-        BigDecimal num4 = new BigDecimal("65485275345777555412.423");
-        BigDecimal resultAddDec = num3.add(num4);
-        BigDecimal resultSubDec = num3.subtract(num4);
-        BigDecimal resultMultDec = num3.multiply(num4);
-        BigDecimal resultDivDec = num4.divide(num3, 9, RoundingMode.DOWN);
-        BigDecimal resultRemDec = num4.remainder(num3);
+
+
+        BigDecimal c = new BigDecimal("65498732165498745698.231");
+        BigDecimal d = new BigDecimal("65485275345777555412.423");
+        BigDecimal resultAddDec = c.add(d);
         System.out.println("Сумма дробных числел равна: " + resultAddDec);
+        BigDecimal resultSubDec = c.subtract(d);
         System.out.println("Разница дробных числел равна: " + resultSubDec);
+        BigDecimal resultMultDec = c.multiply(d);
         System.out.println("Умножение дробных числел равно: " + resultMultDec);
+        BigDecimal resultDivDec = c.divide(d, 9, RoundingMode.DOWN);
         System.out.println("Деление дробных числел равно: " + resultDivDec);
+        BigDecimal resultRemDec = c.remainder(d);
         System.out.println("Остаток от деления дробных числел равен: " + resultRemDec);
 
-        System.out.println();
 
         byte b1 = 125;
         byte b2 = 126;
@@ -43,7 +43,6 @@ public class BigD {
         byte b6 = (byte) (b2 / b1);
         System.out.println("Деление типа Byte: " + b6);
 
-        System.out.println();
 
         short s1 = 32766;
         short s2 = 32765;
@@ -56,7 +55,6 @@ public class BigD {
         short s6 = (short) (s2 / s1);
         System.out.println("Деление типа Short: " + s6);
 
-        System.out.println();
 
         int i1 = 2147483647;
         int i2 = 2147483646;
@@ -69,7 +67,6 @@ public class BigD {
         int i6 = i2 / i1;
         System.out.println("Деление типа Int: " + i6);
 
-        System.out.println();
 
         long l1 = 9223372036854775806L;
         long l2 = 9223372036854775805L;
@@ -82,7 +79,6 @@ public class BigD {
         long l6 = l2 / l1;
         System.out.println("Деление типа Long: " + l6);
 
-        System.out.println();
 
         float f1 = 9223372036854775805.8f;
         float f2 = 9223372036854775805.1243456F;
@@ -95,7 +91,6 @@ public class BigD {
         float f6 = f2 / f1;
         System.out.println("Деление типа Float: " + f6);
 
-        System.out.println();
 
         double d1 = 9464589659223372036854775805.8D;
         double d2 = 98456879877989223372036854775805.1243456d;

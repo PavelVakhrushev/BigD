@@ -2,6 +2,7 @@ package Lesson_2_13_1;
 
 import java.util.Scanner;
 
+// Сделал упражнение 2.13 с правками.
 public class Circle_2 {
     static double radius;
 

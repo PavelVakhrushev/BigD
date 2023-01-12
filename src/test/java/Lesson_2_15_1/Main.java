@@ -1,7 +1,5 @@
 package Lesson_2_15_1;
 
-import static Lesson_2_15_1.DaysOfWeek.*;
-
 
 public class Main {
     public static void main(String[] args) {

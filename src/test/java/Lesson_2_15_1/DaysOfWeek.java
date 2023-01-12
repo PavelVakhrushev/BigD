@@ -2,15 +2,12 @@ package Lesson_2_15_1;
 
 public class DaysOfWeek {
 
-        public static final String PND = "Понедельник";
-        public static final String VT = "Вторник";
-        public static final String SR = "Среда";
-        public static final String CHTV = "Четверг";
-        public static final String PT = "Пятница";
-        public static final String SUB = "Суббота";
-        public static final String VSK = "Воскресенье";
+        public static final String MONDAY = "Понедельник";
+        public static final String TUESDAY = "Вторник";
+        public static final String WEDNESDAY = "Среда";
+        public static final String THURSDAY = "Четверг";
+        public static final String FRIDAY = "Пятница";
+        public static final String SATURDAY = "Суббота";
+        public static final String SUNDAY = "Воскресенье";
 
-
-
-    }
-
+}

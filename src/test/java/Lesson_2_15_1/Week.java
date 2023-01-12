@@ -1,22 +1,33 @@
 package Lesson_2_15_1;
 
-import Lesson_2_15_1.Day;
 
 import static Lesson_2_15_1.DaysOfWeek.*;
 
 public class Week {
-    public static void main(String[] args) {
-        int numberOfWeek1 = 49;
-        //final int numberOfWeek2 = 50;
-        //final int numberOfWeek3 = 51;
+
+    Day day1;
+    Day day2;
+    Day day3;
+    Day day4;
+    Day day5;
+    Day day6;
+    Day day7;
+
+    int weekOfYear;
+
+    public Week(int weekNum, int day1, int day2, int day3, int day4, int day5, int day6, int day7 ) {
+        weekOfYear = weekNum;
+        System.out.println(weekNum + " неделя 2022 года:");
+        System.out.println(MONDAY + " - " + day1 + " число");
+        System.out.println(TUESDAY + " - " + day2 + " число");
+        System.out.println(WEDNESDAY + " - " + day3 + " число");
+        System.out.println(THURSDAY + " - " + day4 + " число");
+        System.out.println(FRIDAY + " - " + day5 + " число");
+        System.out.println(SATURDAY + " - " + day6 + " число");
+        System.out.println(SUNDAY + " - " + day7 + " число");
 
 
-    //    System.out.println(PND + " " + dayOfWeek1 + " число");
-    //    System.out.println(VT + " " + dayOfWeek2 + " число");
-    //    System.out.println(SR + " " + dayOfWeek3 + " число");
-    //    System.out.println(CHTV + " " + dayOfWeek4 + " число");
-    //    System.out.println(PT + " " + dayOfWeek5 + " число");
-    //    System.out.println(SUB + " " + dayOfWeek6 + " число");
-    //    System.out.println(VSK + " " + dayOfWeek7 + " число");
     }
+
+
 }

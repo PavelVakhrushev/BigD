@@ -1,17 +1,15 @@
 package Lesson_2_15__Enum;
 
-import Lesson_2_15_1.Day;
-
-import static Lesson_2_15_1.DaysOfWeek.*;
+import static Lesson_2_15__Enum.DaysOfWeek.*;
 
 public class Week {
 
-    Lesson_2_15_1.Day day1;
-    Lesson_2_15_1.Day day2;
-    Lesson_2_15_1.Day day3;
-    Lesson_2_15_1.Day day4;
-    Lesson_2_15_1.Day day5;
-    Lesson_2_15_1.Day day6;
+    Day day1;
+    Day day2;
+    Day day3;
+    Day day4;
+    Day day5;
+    Day day6;
     Day day7;
 
     int weekOfYear;

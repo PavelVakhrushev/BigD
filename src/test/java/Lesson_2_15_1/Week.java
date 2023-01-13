@@ -28,13 +28,13 @@ public class Week {
         day7 = new Day(7, d7);
 
         System.out.println(weekNum + " неделя 2022 года:");
-        System.out.println(day1 + " " + d1 + " - число");
-        System.out.println(day2 + " " + d2 + " - число");
-        System.out.println(day3 + " " + d3 + " - число");
-        System.out.println(day4 + " " + d4 + " - число");
-        System.out.println(day5 + " " + d5 + " - число");
-        System.out.println(day6 + " " + d6 + " - число");
-        System.out.println(day7 + " " + d7 + " - число");
+        System.out.println(day1 + " - " + d1 + " число");
+        System.out.println(day2 + " - " + d2 + " число");
+        System.out.println(day3 + " - " + d3 + " число");
+        System.out.println(day4 + " - " + d4 + " число");
+        System.out.println(day5 + " - " + d5 + " число");
+        System.out.println(day6 + " - " + d6 + " число");
+        System.out.println(day7 + " - " + d7 + " число");
 
 
     }

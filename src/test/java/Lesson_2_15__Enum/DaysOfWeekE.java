@@ -1,6 +1,6 @@
 package Lesson_2_15__Enum;
 
-public enum DaysOfWeek {
+public enum DaysOfWeekE {
     MONDAY,
     TUESDAY,
     WEDNESDAY,

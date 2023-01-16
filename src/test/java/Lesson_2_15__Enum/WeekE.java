@@ -1,9 +1,6 @@
 package Lesson_2_15__Enum;
 
-import static Lesson_2_15__Enum.DaysOfWeekE.*;
-
 public class WeekE {
-
     DayE day1;
     DayE day2;
     DayE day3;
@@ -12,18 +9,50 @@ public class WeekE {
     DayE day6;
     DayE day7;
 
-    int weekOfYear;
+    int d1;
+    int d2;
+    int d3;
+    int d4;
+    int d5;
+    int d6;
+    int d7;
 
-    public WeekE(int weekNum, int day1, int day2, int day3, int day4, int day5, int day6, int day7 ) {
-        weekOfYear = weekNum;
+    int weekNum;
+
+
+    public WeekE(int weekNum, int d1, int d2, int d3, int d4, int d5, int d6, int d7) {
+        this.weekNum = weekNum;
+
+
+        day1 = new DayE(DaysOfWeekE.MONDAY);
+        day2 = new DayE(DaysOfWeekE.TUESDAY);
+        day3 = new DayE(DaysOfWeekE.WEDNESDAY);
+        day4 = new DayE(DaysOfWeekE.THURSDAY);
+        day5 = new DayE(DaysOfWeekE.FRIDAY);
+        day6 = new DayE(DaysOfWeekE.SATURDAY);
+        day7 = new DayE(DaysOfWeekE.SUNDAY);
+
+        this.d1 = d1;
+        this.d2 = d2;
+        this.d3 = d3;
+        this.d4 = d4;
+        this.d5 = d5;
+        this.d6 = d6;
+        this.d7 = d7;
+
+
+    }
+
+    void print() {
+
         System.out.println(weekNum + " неделя 2022 года:");
-        System.out.println(MONDAY + " - " + day1 + " число");
-        System.out.println(TUESDAY + " - " + day2 + " число");
-        System.out.println(WEDNESDAY + " - " + day3 + " число");
-        System.out.println(THURSDAY + " - " + day4 + " число");
-        System.out.println(FRIDAY + " - " + day5 + " число");
-        System.out.println(SATURDAY + " - " + day6 + " число");
-        System.out.println(SUNDAY + " - " + day7 + " число");
+        System.out.println(day1 + " - " + d1 + " число");
+        System.out.println(day2 + " - " + d2 + " число");
+        System.out.println(day3 + " - " + d3 + " число");
+        System.out.println(day4 + " - " + d4 + " число");
+        System.out.println(day5 + " - " + d5 + " число");
+        System.out.println(day6 + " - " + d6 + " число");
+        System.out.println(day7 + " - " + d7 + " число");
 
 
     }

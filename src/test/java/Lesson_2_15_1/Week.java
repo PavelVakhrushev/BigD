@@ -1,8 +1,6 @@
 package Lesson_2_15_1;
 
 
-import static Lesson_2_15_1.DaysOfWeek.*;
-
 public class Week {
 
     Day day1;
@@ -13,19 +11,41 @@ public class Week {
     Day day6;
     Day day7;
 
-    int weekOfYear;
+    int d1;
+    int d2;
+    int d3;
+    int d4;
+    int d5;
+    int d6;
+    int d7;
+
+    int weekNum;
 
 
     public Week(int weekNum, int d1, int d2, int d3, int d4, int d5, int d6, int d7) {
-        weekOfYear = weekNum;
+        this.weekNum = weekNum;
 
-        day1 = new Day(1, d1);
-        day2 = new Day(2, d2);
-        day3 = new Day(3, d3);
-        day4 = new Day(4, d4);
-        day5 = new Day(5, d5);
-        day6 = new Day(6, d6);
-        day7 = new Day(7, d7);
+
+        day1 = new Day(1);
+        day2 = new Day(2);
+        day3 = new Day(3);
+        day4 = new Day(4);
+        day5 = new Day(5);
+        day6 = new Day(6);
+        day7 = new Day(7);
+
+        this.d1 = d1;
+        this.d2 = d2;
+        this.d3 = d3;
+        this.d4 = d4;
+        this.d5 = d5;
+        this.d6 = d6;
+        this.d7 = d7;
+
+
+    }
+
+    void print() {
 
         System.out.println(weekNum + " неделя 2022 года:");
         System.out.println(day1 + " - " + d1 + " число");
@@ -38,6 +58,6 @@ public class Week {
 
 
     }
-
-
 }
+
+

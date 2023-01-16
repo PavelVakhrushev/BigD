@@ -7,7 +7,7 @@ public class Day {
 
     public Day(int dayOfWeek) {
         this.dayOfWeek = DaysOfWeek.Week[dayOfWeek - 1];
-        //this.dayOfMonth = dayOfMonth;
+
     }
 
     public String toString() {

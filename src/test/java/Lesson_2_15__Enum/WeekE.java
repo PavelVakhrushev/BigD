@@ -19,18 +19,16 @@ public class WeekE {
 
     int weekNum;
 
-
     public WeekE(int weekNum, int d1, int d2, int d3, int d4, int d5, int d6, int d7) {
         this.weekNum = weekNum;
 
-
-        day1 = new DayE(DaysOfWeekE.MONDAY);
-        day2 = new DayE(DaysOfWeekE.TUESDAY);
-        day3 = new DayE(DaysOfWeekE.WEDNESDAY);
-        day4 = new DayE(DaysOfWeekE.THURSDAY);
-        day5 = new DayE(DaysOfWeekE.FRIDAY);
-        day6 = new DayE(DaysOfWeekE.SATURDAY);
-        day7 = new DayE(DaysOfWeekE.SUNDAY);
+        day1 = new DayE(DaysOfWeekE.MONDAY.getNameRussian());
+        day2 = new DayE(DaysOfWeekE.TUESDAY.getNameRussian());
+        day3 = new DayE(DaysOfWeekE.WEDNESDAY.getNameRussian());
+        day4 = new DayE(DaysOfWeekE.THURSDAY.getNameRussian());
+        day5 = new DayE(DaysOfWeekE.FRIDAY.getNameRussian());
+        day6 = new DayE(DaysOfWeekE.SATURDAY.getNameRussian());
+        day7 = new DayE(DaysOfWeekE.SUNDAY.getNameRussian());
 
         this.d1 = d1;
         this.d2 = d2;
@@ -39,7 +37,6 @@ public class WeekE {
         this.d5 = d5;
         this.d6 = d6;
         this.d7 = d7;
-
 
     }
 
@@ -54,7 +51,5 @@ public class WeekE {
         System.out.println(day6 + " - " + d6 + " число");
         System.out.println(day7 + " - " + d7 + " число");
 
-
     }
-
 }

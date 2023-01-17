@@ -15,7 +15,6 @@ public enum DaysOfWeekE {
         this.nameRussian = nameRussian;
     }
 
-
     public String getNameRussian() {
         return nameRussian;
     }

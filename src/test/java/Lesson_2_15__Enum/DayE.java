@@ -6,18 +6,14 @@ public class DayE {
     int dayOfMonth;
     String dayOfWeek;
 
-
-    public DayE(String dayOfWeek) {
+    public DayE(int dayOfMonth, String dayOfWeek) {
 
         this.dayOfWeek = dayOfWeek;
-
+        this.dayOfMonth = dayOfMonth;
     }
 
     public String toString() {
-        String res;
-        res = String.valueOf(dayOfWeek);
-        return res;
+        return dayOfWeek + " - " + dayOfMonth + " число";
     }
-
 
 }

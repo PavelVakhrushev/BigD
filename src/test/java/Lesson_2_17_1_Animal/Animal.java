@@ -19,7 +19,7 @@ public abstract class Animal {
     abstract void makeSound();
 
     void eat(double eatFood) {
-        System.out.println("Животное " + name + " ест корм." );
+        System.out.println("Животное " + name + " ест корм.");
         foodCounter = foodCounter - eatFood;
         System.out.println("Остаток корма: " + foodCounter);
     }
@@ -29,7 +29,8 @@ public abstract class Animal {
     }
 
     public String toString() {
-        return "Страна обитания: " + location + "\nСостояние здоровья: " + health + "\nОбщее количество животных: " + counter;
+        return "Страна обитания: " + location + "\nСостояние здоровья: " + health +
+                "\nОбщее количество особей: " + counter;
     }
 
     public Animal(String name, String food, double foodCounter, String location, HealthState health) {
@@ -37,20 +38,21 @@ public abstract class Animal {
         this.food = food;
         this.foodCounter = foodCounter;
         this.health = health;
-        counter ++;
+        counter++;
     }
+
     public Animal(String name, double foodCounter, String location, HealthState health) {
         this.name = name;
         this.foodCounter = foodCounter;
         this.location = location;
-        counter ++;
+        counter++;
     }
 
     public Animal() {
-        counter ++;
+        counter++;
     }
 
     public Animal(String name, double foodCounter, String location) {
-        counter ++;
+        counter++;
     }
 }

@@ -5,7 +5,7 @@ public class Dog extends Animal {
         super(name, foodCounter, location, health);
     }
 
-    public Dog(){
+    public Dog() {
 
     }
 

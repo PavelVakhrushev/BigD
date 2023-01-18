@@ -11,7 +11,7 @@ public class Vet {
         if (animal.getHealth().equals(HealthState.HEALTHY)) {
             System.out.println("Животное здорово");
         } else {
-            animal.setHealth(HealthState.UNHEALTHY);
+            animal.setHealth(HealthState.HEALTHY);
             System.out.println("Животное вылечено");
         }
 

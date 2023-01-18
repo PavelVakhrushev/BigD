@@ -39,7 +39,6 @@ public class Main {
         System.out.println();
         vet1.treatAnimal(horse1);
         System.out.println();
-        System.out.println();
         System.out.println(horse1);
     }
 }

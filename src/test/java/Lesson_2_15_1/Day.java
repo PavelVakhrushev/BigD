@@ -5,15 +5,14 @@ public class Day {
     String dayOfWeek;
     int dayOfMonth;
 
-    public Day(int dayOfWeek) {
+    public Day(int dayOfMonth, int dayOfWeek) {
         this.dayOfWeek = DaysOfWeek.Week[dayOfWeek - 1];
-
+        this.dayOfMonth = dayOfMonth;
     }
 
     public String toString() {
-        String res;
-        res = String.valueOf(dayOfWeek);
-        return res;
+
+        return dayOfWeek + " - " + dayOfMonth + " число";
     }
 
 }

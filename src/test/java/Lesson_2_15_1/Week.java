@@ -11,14 +11,6 @@ public class Week {
     Day day6;
     Day day7;
 
-    int d1;
-    int d2;
-    int d3;
-    int d4;
-    int d5;
-    int d6;
-    int d7;
-
     int weekNum;
 
 
@@ -26,35 +18,26 @@ public class Week {
         this.weekNum = weekNum;
 
 
-        day1 = new Day(1);
-        day2 = new Day(2);
-        day3 = new Day(3);
-        day4 = new Day(4);
-        day5 = new Day(5);
-        day6 = new Day(6);
-        day7 = new Day(7);
-
-        this.d1 = d1;
-        this.d2 = d2;
-        this.d3 = d3;
-        this.d4 = d4;
-        this.d5 = d5;
-        this.d6 = d6;
-        this.d7 = d7;
-
+        this.day1 = new Day(d1, 1);
+        this.day2 = new Day(d2, 2);
+        this.day3 = new Day(d3, 3);
+        this.day4 = new Day(d4, 4);
+        this.day5 = new Day(d5, 5);
+        this.day6 = new Day(d6, 6);
+        this.day7 = new Day(d7, 7);
 
     }
 
     void print() {
 
         System.out.println(weekNum + " неделя 2022 года:");
-        System.out.println(day1 + " - " + d1 + " число");
-        System.out.println(day2 + " - " + d2 + " число");
-        System.out.println(day3 + " - " + d3 + " число");
-        System.out.println(day4 + " - " + d4 + " число");
-        System.out.println(day5 + " - " + d5 + " число");
-        System.out.println(day6 + " - " + d6 + " число");
-        System.out.println(day7 + " - " + d7 + " число");
+        System.out.println(day1);
+        System.out.println(day2);
+        System.out.println(day3);
+        System.out.println(day4);
+        System.out.println(day5);
+        System.out.println(day6);
+        System.out.println(day7);
 
 
     }

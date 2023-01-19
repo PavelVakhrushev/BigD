@@ -5,13 +5,17 @@ public class Cat extends Animal {
         super(name, foodCounter, location, health);
     }
 
-    public Cat() {
-
-    }
 
     @Override
     public void makeSound() {
-        System.out.println("Мяу");
+        System.out.println("Мяу!");
+    }
+
+    @Override
+    void eat(double eatFood) {
+        super.eat(eatFood);
+        System.out.println(name + " ест корм для кошек");
+        System.out.println("Запас корма: " + foodCounter + " кг");
     }
 
     @Override

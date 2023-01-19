@@ -5,7 +5,7 @@ public abstract class Animal {
     String food;
     double foodCounter;
     String location;
-    int counter = 0;
+    static int counter = 0;
     HealthState health;
 
     public HealthState getHealth() {
@@ -16,43 +16,31 @@ public abstract class Animal {
         this.health = health;
     }
 
-    abstract void makeSound();
+    void makeSound() {
+        System.out.println("Голос!");
+    }
 
     void eat(double eatFood) {
-        System.out.println("Животное " + name + " ест корм.");
         foodCounter = foodCounter - eatFood;
-        System.out.println("Остаток корма: " + foodCounter);
+
     }
 
     void sleep() {
         System.out.println(name + " спит.");
     }
 
+
     public String toString() {
         return "Страна обитания: " + location + "\nСостояние здоровья: " + health +
-                "\nОбщее количество особей: " + counter;
-    }
-
-    public Animal(String name, String food, double foodCounter, String location, HealthState health) {
-        this.name = name;
-        this.food = food;
-        this.foodCounter = foodCounter;
-        this.health = health;
-        counter++;
+                "\nКоличество особей: " + counter;
     }
 
     public Animal(String name, double foodCounter, String location, HealthState health) {
         this.name = name;
         this.foodCounter = foodCounter;
         this.location = location;
+        this.health = health;
         counter++;
     }
 
-    public Animal() {
-        counter++;
-    }
-
-    public Animal(String name, double foodCounter, String location) {
-        counter++;
-    }
 }

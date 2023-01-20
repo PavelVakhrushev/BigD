@@ -8,8 +8,8 @@ public class Driver extends Person {
 
     @Override
     public String toString() {
-        return getName() + " возвраст" + getAge() + "\nСтаж:" + drivingExperience + "\nНомер удостовериения" +
-        licenseId;
+        return getName() + ", возраст: " + getAge() + " лет" + "\nСтаж: " + drivingExperience + " лет" +
+                "\nНомер удостовериения: " + licenseId;
     }
 
     public Driver(int age, String name, int drivingExperience, int licenseId) {

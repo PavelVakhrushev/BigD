@@ -16,9 +16,7 @@ public abstract class Animal {
         this.health = health;
     }
 
-    void makeSound() {
-        System.out.println("Голос!");
-    }
+    abstract void makeSound();
 
     void eat(double eatFood) {
         foodCounter = foodCounter - eatFood;

@@ -10,4 +10,4 @@ public enum VehicleClass {
     SPORT_UTILITY_CARS,
     MULTI_PURPOSE,
     SPORTS_CAR;
-    }
+}

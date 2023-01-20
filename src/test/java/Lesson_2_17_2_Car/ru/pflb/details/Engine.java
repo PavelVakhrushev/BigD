@@ -5,7 +5,7 @@ public class Engine {
     String vendor; // название производителя
 
     public String toString() {
-        return "\nПроизводитель: " + vendor + "\nМощность: " + power + "л.с.";
+        return "\nпроизводитель: " + vendor + "\nмощность: " + power + " ватт";
     }
 
     public Engine(int power, String vendor) {

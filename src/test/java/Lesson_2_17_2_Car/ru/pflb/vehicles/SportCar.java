@@ -14,7 +14,6 @@ public class SportCar extends Car {
     public SportCar(String model, VehicleClass vehicleClass, int weight, Driver driver, Engine engine,
                     int maxVelocity) {
         super(model, vehicleClass, weight, driver, engine);
-        this.vehicleClass = VehicleClass.SPORTS_CAR;
         this.maxVelocity = maxVelocity;
     }
 }

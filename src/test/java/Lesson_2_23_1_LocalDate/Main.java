@@ -4,7 +4,7 @@ import java.time.*;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class Main {
+/*public class Main {
     Instant timeStart = Instant.now();
 
     Instant timeStartDate = Instant.now();
@@ -26,4 +26,4 @@ public class Main {
     ZonedDateTime myBirthDayZonedDateTime =
             new ZonedDateTime.of(1988, 07, 23, 05, 17, 03, 60, ZoneId.of("UTC + 4"));
     // дата рождения класса ZonedDateTime
-}
+}*/

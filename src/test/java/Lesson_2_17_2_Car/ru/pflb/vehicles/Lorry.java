@@ -10,10 +10,10 @@ public class Lorry extends Car {
     public String toString() {
         return super.toString() + "\nГрузоподъемность: " + loadingAmount + " кг.";
     }
-
-    public Lorry(String model, VehicleClass vehicleClass, int weight, Driver driver, Engine engine,
+    // поправил VehicleClass для Lorry
+    public Lorry(String model, int weight, Driver driver, Engine engine,
                  int loadingAmount) {
-        super(model, vehicleClass, weight, driver, engine);
+        super(model, VehicleClass.MEDIUM, weight, driver, engine);
         this.loadingAmount = loadingAmount;
     }
 }

@@ -106,5 +106,4 @@ public class Main {
         System.out.println("Время за которое выполнятеся программа из пункта 1 по классу GregorianCalendar: " +
                 diffStartGCEndGC);
     }
-
 }

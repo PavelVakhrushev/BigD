@@ -19,9 +19,9 @@ public class Main {
 
 
         Car car1 = new Car("Гранта", VehicleClass.SMALL, 1500, driverCar, engineCar);
-        Lorry lorry1 = new Lorry("KAMAZ", VehicleClass.LARGE, 5000, driverLorry, engineLorry,
+        Lorry lorry1 = new Lorry("KAMAZ", 5000, driverLorry, engineLorry,
                 10000);
-        SportCar sportCar1 = new SportCar("Lancer", VehicleClass.SPORTS_CAR, 2000, driverSportCar,
+        SportCar sportCar1 = new SportCar("Lancer", 2000, driverSportCar,
                 engineSportCar, 300);
 
 

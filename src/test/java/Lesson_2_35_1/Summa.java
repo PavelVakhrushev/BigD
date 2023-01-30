@@ -1,4 +1,4 @@
-package Lesson_2_35;
+package Lesson_2_35_1;
 
 /* Создать класс Summa, в нем 3 переменные int a,b,c, double x, y, z
 Создать и перегрузить метод sum

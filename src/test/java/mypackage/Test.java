@@ -1,17 +1,32 @@
 package mypackage;
 
-/*public class Test {
-    public static void main(String[] args) {
-
-        int i, j;
-        x = 42;
-        i = 15;
-
-        String a, b = "value";
+class Test {
+    static String x;
 
 
-        System.out.println(a, b);
+
+    {
+        x = "1";
     }
 
 
-}*/
+
+    static {
+        x += 2;
+    }
+
+
+
+    static void m() {
+        x += 3;
+    }
+
+
+
+    public static void main(String[] args) {
+        x += 4;
+        Test t = new Test();
+        t.m();
+        System.out.println(x);
+    }
+}

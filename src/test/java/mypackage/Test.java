@@ -1,32 +1,18 @@
 package mypackage;
 
 class Test {
-    static String x;
-
-
-
-    {
-        x = "1";
-    }
-
-
-
-    static {
-        x += 2;
-    }
-
-
-
-    static void m() {
-        x += 3;
-    }
-
-
-
     public static void main(String[] args) {
-        x += 4;
-        Test t = new Test();
-        t.m();
+
+        int x = 2;
+        switch(x) {
+            case 1, 2, 3:
+                System.out.println();
+                break;
+            case 4, 5, 6:
+                System.out.println();
+                break;
+        }
         System.out.println(x);
     }
+
 }

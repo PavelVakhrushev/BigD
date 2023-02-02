@@ -25,7 +25,7 @@ public class Task_4 {
             if (maxSideTriangle < c) maxSideTriangle = c;
             res = a * a + b * b + c * c - 2 * (maxSideTriangle * maxSideTriangle); // считаем знак "+", "-" или "="
             if (res > 0)
-            System.out.println("acute");
+                System.out.println("acute");
             else if (res < 0)
                 System.out.println("obtuse");
             else

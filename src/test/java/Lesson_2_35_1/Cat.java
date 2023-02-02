@@ -14,55 +14,105 @@ public class Cat {
 
     }
 
-    Cat(String colorWoolCat, int ageCat, double weightCat, String colorEyeCat) {
-        this.colorWoolCat = colorWoolCat;
-        this.ageCat = ageCat;
-        this.weightCat = weightCat;
-        this.colorEyeCat = colorEyeCat;
-    }
-
-    Cat(double weightCat, int ageCat, String colorWoolCat, String colorEyeCat) {
-        this.weightCat = weightCat;
-        this.ageCat = ageCat;
-        this.colorWoolCat = colorWoolCat;
-        this.colorEyeCat = colorEyeCat;
-    }
-
-    Cat(int ageCat, String colorEyeCat, String colorWoolCat, double weightCat) {
-        this.ageCat = ageCat;
-        this.colorEyeCat = colorEyeCat;
-        this.colorWoolCat = colorWoolCat;
-        this.weightCat = weightCat;
-    }
-
-    Cat(String colorEyeCat, double weightCat, int ageCat, String colorWoolCat) {
-        this.colorEyeCat = colorEyeCat;
-        this.weightCat = weightCat;
-        this.ageCat = ageCat;
-        this.colorWoolCat = colorWoolCat;
-    }
-
-    Cat(double weightCat, String colorWoolCat, String colorEyeCat) {
-        this.weightCat = weightCat;
-        this.colorWoolCat = colorWoolCat;
-        this.colorEyeCat = colorEyeCat;
-    }
-
-    Cat(String colorEyeCat, int ageCat, String colorWoolCat) {
-        this.colorEyeCat = colorEyeCat;
-        this.ageCat = ageCat;
-        this.colorWoolCat = colorWoolCat;
-    }
-
     Cat(int ageCat, String colorEyeCat) {
         this.ageCat = ageCat;
         this.colorEyeCat = colorEyeCat;
+    }
+
+    /* конструктор с colorWoolCat с точки зрения java схожий с конструктором colorEyeCat т.к
+   java не может определить к какому String даётся значение переменных
+
+
+    Cat (int ageCat, String colorWoolCat) {
+        this. ageCat = ageCat;
+        this.colorWoolCat = colorWoolCat;
+    }
+    */
+    Cat(int ageCat, double weightCat) {
+        this.ageCat = ageCat;
+        this.weightCat = weightCat;
     }
 
     Cat(String colorEyeCat, int ageCat) {
         this.colorEyeCat = colorEyeCat;
         this.ageCat = ageCat;
     }
+
+    Cat(String colorEyeCat, double weightCat) {
+        this.colorEyeCat = colorEyeCat;
+        this.weightCat = weightCat;
+    }
+
+    Cat(String colorEyeCat, String colorWoolCat) {
+        this.colorEyeCat = colorEyeCat;
+        this.colorWoolCat = colorWoolCat;
+    }
+    /* конструктор с colorWoolCat с точки зрения java схожий с конструктором colorEyeCat т.к
+   java не может определить к какому String даётся значение переменных
+
+    Cat(String colorWoolCat, String colorEyeCat) {
+        this.colorWoolCat =colorWoolCat;
+        this.colorEyeCat = colorEyeCat;
+    }
+     */
+
+    Cat(double weightCat, int ageCat) {
+        this.weightCat = weightCat;
+        this.ageCat = ageCat;
+    }
+
+    Cat(double weightCat, String colorEyeCat) {
+        this.weightCat = weightCat;
+        this.colorEyeCat = colorEyeCat;
+    }
+
+    /* конструктор с colorWoolCat с точки зрения java схожий с конструктором colorEyeCat т.к
+   java не может определить к какому String даётся значение переменных
+
+    Cat(double weightCat, String colorWoolCat) {
+        this.weightCat = weightCat;
+        this.colorWoolCat = colorWoolCat;
+
+    }
+    */
+
+    /* конструктор с colorWoolCat с точки зрения java схожий с конструктором colorEyeCat т.к
+   java не может определить к какому String даётся значение переменных
+
+    Cat (String colorWoolCat, int ageCat) {
+        this.colorWoolCat = colorWoolCat;
+        this.ageCat = ageCat;
+    }
+    */
+    /* конструктор с colorWoolCat с точки зрения java схожий с конструктором colorEyeCat т.к
+   java не может определить к какому String даётся значение переменных
+
+
+    Cat (String colorWoolCat, double weightCat) {
+        this.colorWoolCat = colorWoolCat;
+        this.weightCat = weightCat;
+    }
+    */
+    Cat(int ageCat) {
+        this.ageCat = ageCat;
+    }
+
+    Cat(double weightCat) {
+        this.weightCat = weightCat;
+    }
+
+    Cat(String colorEyeCat) {
+        this.colorEyeCat = colorEyeCat;
+    }
+
+    /* конструктор с colorWoolCat с точки зрения java схожий с конструктором colorEyeCat т.к
+   java не может определить к какому String даётся значение переменной
+
+
+    Cat(String colorWoolCat) {
+       this.colorWoolCat = colorWoolCat;
+   }
+   */
 
     public String toString() {
         return "количество лет: " + ageCat +
@@ -72,14 +122,14 @@ public class Cat {
     }
 
     public static void main(String[] args) {
-        Cat cat1 = new Cat("серый", 3, 5.5, "желтый");
-        Cat cat2 = new Cat(5.2, 3, "коричневый", "зеленый");
-        Cat cat3 = new Cat(4, "оранжевый", "белый", 3.3);
-        Cat cat4 = new Cat("голубой", 4.2, 2, "черный");
-        Cat cat5 = new Cat("желтый", 5, "серая дымка");
-        Cat cat6 = new Cat(7.7, "черно-белый", "красный");
-        Cat cat7 = new Cat(5, "зеленый");
-        Cat cat8 = new Cat("синий", 6);
+        Cat cat1 = new Cat(5, 6.0);
+        Cat cat2 = new Cat("зеленый", 3.5);
+        Cat cat3 = new Cat("оранжевый", "белый");
+        Cat cat4 = new Cat(4.2, 2);
+        Cat cat5 = new Cat(5.5, "серая дымка");
+        Cat cat6 = new Cat(7);
+        Cat cat7 = new Cat(5.6);
+        Cat cat8 = new Cat("синий");
         Cat cat9 = new Cat();
 
         System.out.println(cat1);

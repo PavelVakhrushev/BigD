@@ -14,20 +14,18 @@ import static Lesson_2_35_2.Cat.testStaticMethod;
 public class Animal {
     static String planet = "Земля";
 
-    static {
-        System.out.println(planet);
+    public String getPlanet() {
+        return planet;
     }
 
-    static {
-        planet = "Луна";
+    public String setPlanet(String planet) {
+        Animal.planet = planet;
+        return planet;
     }
 
-    public Animal() {
-
-    }
 
     public Animal(String planet) {
-        this.planet = planet;
+
     }
 
     public String toString() {
@@ -40,7 +38,11 @@ public class Animal {
         Lesson_2_35_2.Cat.testStaticMethod();
         testStaticMethod();
 
-        Cat cat2 = new Cat(planet);
-        System.out.println(cat2);
+        Animal planet3 = new Animal(planet);
+        System.out.println(planet3.setPlanet("luna"));
+
+
+        Animal planet2 = new Animal(planet);
+        System.out.println(planet2);
     }
 }

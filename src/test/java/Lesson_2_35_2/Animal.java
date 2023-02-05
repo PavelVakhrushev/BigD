@@ -19,7 +19,7 @@ public class Animal {
     }
 
     public String setPlanet(String planet) {
-        Animal.planet = planet;
+        planet = "Луна";
         return planet;
     }
 

@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="BigD" />
+        <module name="Lesson_2_9.BigD" />
       </profile>
     </annotationProcessing>
   </component>

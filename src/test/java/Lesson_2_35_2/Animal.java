@@ -9,23 +9,22 @@ package Lesson_2_35_2;
         Заменить это поле на Луна
         У созданной кошки вывести данное поле. */
 
-import static Lesson_2_35_2.Cat.testStaticMethod;
-
 public class Animal {
     static String planet = "Земля";
 
-    public String getPlanet(String planet) {
-        return Animal.planet;
+    public Animal(String planet) {
     }
 
-    public static String setPlanet(String planet) {
-        planet = "Луна";
+    public static void testStaticMethod() {
+        System.out.println("Это статическое животное");
+    }
+
+    public String getPlanet(String planet) {
         return planet;
     }
 
-
-    public Animal(String planet) {
-
+    public void setPlanet(String planet) {
+        Animal.planet = planet;
     }
 
     public String toString() {
@@ -33,17 +32,13 @@ public class Animal {
     }
 
     public static void main(String[] args) {
-        Cat cat1 = new Cat();
+        Cat cat = new Cat(planet);
+        System.out.println(cat);
+        Animal.testStaticMethod();
+        Cat.testStaticMethod();
         testStaticMethod();
-        Lesson_2_35_2.Cat.testStaticMethod();
-        testStaticMethod();
-
-        Cat cat2 = new Cat(cat1.getPlanet(planet));
-        System.out.println(cat2);
-
-        Cat cat3 = new Cat(setPlanet(planet));
-        System.out.println(cat3);
-
+        cat.setPlanet("Луна");
+        System.out.println(cat);
 
     }
 }

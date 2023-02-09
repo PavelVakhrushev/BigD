@@ -19,14 +19,16 @@ public class Task_2 {
         int sum = 0;
         m = m * 60;
 
+        if (n > 0 && m > 0) {
 
-        for (int i = m; i <= n * (m + 10) ; i+=m+10) {
-            sum += i;
-            if (n > 0 && m > 0) {
-                System.out.println("Бригада работала " + sum / 60 + " часов " + sum % 60 + " минут");
-            } else {
-                System.out.println("ERROR");
-            }
+            for (int i = 1; i <= n; i++)
+
+                sum = i * m + i * 10;
+
+            System.out.println("Бригада работала " + sum / 60 + " часа " + sum % 60 + " минут");
+        } else {
+            System.out.println("ERROR");
         }
     }
 }
+

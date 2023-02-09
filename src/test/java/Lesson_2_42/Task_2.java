@@ -16,11 +16,14 @@ public class Task_2 {
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
         int m = Integer.parseInt(args[1]);
+        int sum = 0;
         m = m * 60;
-        m = m + 10;
-        for (int x = n * m; ; x += 10) {
+
+
+        for (int i = m; i <= n * (m + 10) ; i+=m+10) {
+            sum += i;
             if (n > 0 && m > 0) {
-                System.out.println(x % 60);
+                System.out.println("Бригада работала " + sum / 60 + " часов " + sum % 60 + " минут");
             } else {
                 System.out.println("ERROR");
             }

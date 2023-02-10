@@ -21,9 +21,9 @@ public class Task_2 {
 
         if (n > 0 && m > 0) {
 
-            for (int i = 1; i <= n; i++)
+            for (int i = 1; i <= n; i++, m = m + 10)
 
-                sum = i * m + i * 10;
+                sum += m;
 
             System.out.println("Бригада работала " + sum / 60 + " часа " + sum % 60 + " минут");
         } else {

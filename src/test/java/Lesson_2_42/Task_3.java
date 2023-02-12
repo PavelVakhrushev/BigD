@@ -27,18 +27,14 @@ public class Task_3 {
 
     public static void snakePrint(int n, int col) {
         if (n > 1 && col > 0) {
-            for (int i = 1; i <= col; i++) {
+            int count = 0;
+            for (int i = 1; i <= n; i++) {
+                count++;
                 System.out.print(i + " ");
-            }
-            System.out.println();
-            for (int k = n - col; k > col; k--) {
-                System.out.print(k + " ");
-            }
-            System.out.println();
-            for (int j = n - col + 1 ; j <= n; j++ ) {
-                System.out.print(j + " ");
-            }
+                if (count % col == 0)
+                    System.out.println();
 
+            }
         } else {
             System.out.println("ERROR");
         }

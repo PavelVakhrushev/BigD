@@ -25,19 +25,31 @@ public class Task_3 {
         snakePrint(n, col);
     }
 
+    private static void printRightOrder(int currentNumber, int numbersInRow) {
+        for (int i = currentNumber; i < currentNumber + numbersInRow; i++) {
+            System.out.print(i + " ");
+        }
+    }
+
+    static void printReverseOrder(int currentNumber, int numbersInRow) {
+        for (int i = currentNumber; i < currentNumber + numbersInRow; i++) {
+
+            System.out.print(i + " ");
+        }
+    }
+
     public static void snakePrint(int n, int col) {
         if (n > 1 && col > 0) {
-            int count = 0;
-            for (int i = 1; i <= n; i++) {
-                count++;
-                System.out.print(i + " ");
-                if (count % col == 0)
-                    System.out.println();
-
+            for (int currentNumber = 1, currentRow = 1; currentNumber <= n; currentNumber += col, currentRow++) {
+                if (currentRow % 2 == 1) {
+                    printRightOrder(currentNumber, col);
+                } else {
+                    printReverseOrder(currentNumber, col);
+                }
+                System.out.println();
             }
         } else {
             System.out.println("ERROR");
         }
     }
-
 }

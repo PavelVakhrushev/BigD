@@ -11,4 +11,9 @@ package Lesson_2_42;
 java.lang.Math или java.util.Random.*/
 
 public class Task_4 {
+    public static void main(String[] args) {
+        for (int i = 10; i>0; i--){
+            System.out.println(i);
+        }
+    }
 }

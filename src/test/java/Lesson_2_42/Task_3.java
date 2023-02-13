@@ -30,12 +30,15 @@ public class Task_3 {
             System.out.print(i + " ");
         }
     }
-    static void printReverseOrder(int currentNumber, int numbersInRow) {
-        for (int i = currentNumber + numbersInRow - 1; i > numbersInRow; i--) {
+
+    private static void printReverseOrder(int currentNumber, int numbersInRow) {
+        for (int i = currentNumber + numbersInRow - 1; i >= currentNumber; i--) {
+
             System.out.print(i + " ");
-            
+
         }
     }
+
     public static void snakePrint(int n, int col) {
         if (n > 1 && col > 0) {
             for (int currentNumber = 1, currentRow = 1; currentNumber <= n; currentNumber += col, currentRow++) {

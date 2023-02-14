@@ -25,9 +25,7 @@ public class Task_3 {
     Task_3(int n, int col) {
         this.n = n;
         this.col = col;
-
     }
-
 
     void snakePrint(int n, int col) {
         if (n > 1 && col > 0) {
@@ -46,7 +44,8 @@ public class Task_3 {
 
     void printRightOrder(int currentNumber, int numbersInRow) {
         for (int i = currentNumber; i < currentNumber + numbersInRow; i++) {
-            System.out.print(i + " ");
+            if (i <= n && i <= currentNumber + numbersInRow)
+                System.out.print(i + " ");
         }
     }
 

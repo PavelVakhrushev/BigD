@@ -11,9 +11,26 @@ package Lesson_2_42;
 java.lang.Math или java.util.Random.*/
 
 public class Task_4 {
-    public static void main(String[] args) {
-        for (int i = 10; i>0; i--){
-            System.out.println(i);
-        }
+    static int n;
+
+
+    static int nextInt(int x) {
+        return (int) (Math.random() * x);
     }
+
+    static boolean isPrime(int x) {
+        return nextInt(x) >= 1 || nextInt(x) / 2 != 0;
+    }
+
+    public static void main(String[] args) {
+
+        do {
+            n = nextInt(9);
+        } while (!isPrime(n));
+        System.out.println(n);
+    }
+
 }
+
+
+

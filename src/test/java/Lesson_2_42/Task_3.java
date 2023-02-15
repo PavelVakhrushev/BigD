@@ -23,8 +23,8 @@ public class Task_3 {
     static int col;
 
     Task_3(int n, int col) {
-        this.n = n;
-        this.col = col;
+        Task_3.n = n;
+        Task_3.col = col;
     }
 
     void snakePrint(int n, int col) {

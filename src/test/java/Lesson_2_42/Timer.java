@@ -26,5 +26,44 @@ package Lesson_2_42;
 00:01
 00:00*/
 
-public class Task_6 {
+public class Timer {
+    static int seconds;
+
+    public Timer(int seconds) {
+        Timer.seconds = seconds;
+    }
+
+    public static void waitSecond() {
+        long start = System.currentTimeMillis();
+        while (System.currentTimeMillis() - start < 1000) {
+
+        }
+    }
+
+    public void printTime() {
+        if (seconds >= 60) {
+            System.out.println("0" + seconds / 60 + ":" + "0" + seconds % 60);
+        } else if (seconds >= 10) {
+            System.out.println("0" + 0 + ":" + seconds % 60);
+        } else {
+            System.out.println("0" + 0 + ":" + "0" + seconds % 60);
+        }
+    }
+
+    public void start() {
+        for (int i = seconds; i >= 0; i--, seconds--) {
+            printTime();
+            waitSecond();
+        }
+    }
+
+    public static void main(String[] args) {
+        int seconds = Integer.parseInt(args[0]);
+        if (seconds > 0) {
+            Timer timer1 = new Timer(seconds);
+            timer1.start();
+        } else {
+            System.out.println("ERROR");
+        }
+    }
 }

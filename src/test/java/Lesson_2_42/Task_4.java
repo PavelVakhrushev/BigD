@@ -11,26 +11,42 @@ package Lesson_2_42;
 java.lang.Math или java.util.Random.*/
 
 public class Task_4 {
-    static int n;
 
-
-    static int nextInt(int x) {
+    public static int nextInt(int x) {
         return (int) (Math.random() * x);
     }
 
-    static boolean isPrime(int x) {
-        return nextInt(x) >= 1 || nextInt(x) / 2 != 0;
+    public static boolean isPrime(int x) {
+        if (x <= 1)
+            return false;
+        else if (x <= 3)
+            return true;
+        else if (x % 2 == 0 || x % 3 == 0)
+            return false;
+        int d = 5;
+        while (d * d <= x) {
+            if (x % d == 0 || x % (d + 2) == 0)
+                return false;
+            d = d + 6;
+        }
+        return true;
     }
 
     public static void main(String[] args) {
-
-        do {
-            n = nextInt(9);
-        } while (!isPrime(n));
+        int n;
+        while (true) {
+            n = nextInt(100);
+            if (isPrime(n)) {
+                break;
+            }
+        }
         System.out.println(n);
     }
-
 }
+
+
+
+
 
 
 

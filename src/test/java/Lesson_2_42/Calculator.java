@@ -47,21 +47,11 @@ public class Calculator {
             System.exit(0);
         }
         switch (b) {
-            case ("+"):
-                System.out.println(x + " " + b + " " + y + " = " + add(x, y));
-                break;
-            case ("-"):
-                System.out.println(x + " " + b + " " + y + " = " + sub(x, y));
-                break;
-            case ("*"):
-                System.out.println(x + " " + b + " " + y + " = " + mult(x, y));
-                break;
-            case ("/"):
-                System.out.println(x + " " + b + " " + y + " = " + divide(x, y));
-                break;
-            default:
-                System.out.println("Программа может только +, -, *, /");
-                break;
+            case ("+") -> System.out.println(x + " " + b + " " + y + " = " + add(x, y));
+            case ("-") -> System.out.println(x + " " + b + " " + y + " = " + sub(x, y));
+            case ("*") -> System.out.println(x + " " + b + " " + y + " = " + mult(x, y));
+            case ("/") -> System.out.println(x + " " + b + " " + y + " = " + divide(x, y));
+            default -> System.out.println("Программа может только +, -, *, /");
         }
     }
 }

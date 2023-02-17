@@ -27,6 +27,7 @@ public class Task_2 {
         String str = String.valueOf(args[0]);
        if ((str).endsWith("/") || (str).endsWith("\\")) {
             System.out.println("Введен некорректный путь до файла");
+
         }
 
 

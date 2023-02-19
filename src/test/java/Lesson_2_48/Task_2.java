@@ -20,17 +20,19 @@ package Lesson_2_48;
 Проверку на наличие и корректность аргумента делать не надо.
  */
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Task_2 {
     public static void main(String[] args) {
         String str = String.valueOf(args[0]);
-       if ((str).endsWith("/") || (str).endsWith("\\")) {
+        if ((str).endsWith("/") || (str).endsWith(String.valueOf((char) 92))) {
             System.out.println("Введен некорректный путь до файла");
 
+        } else {
+            System.out.println("Путь: " + str.substring(0, str.lastIndexOf("/") + 1));
+            System.out.println("Имя файла: " + str.substring(str.lastIndexOf("/") + 1));
         }
-
-
     }
-
 }
+

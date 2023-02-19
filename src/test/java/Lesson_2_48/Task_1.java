@@ -17,7 +17,7 @@ public class Task_1 {
         String str = "Циклом называется многократное выполнение одних и тех же действий.";
         str = str.replaceAll(" ", ""); //убираем пробелы
         int index = str.indexOf(args[0]); // номер буквы в строке
-        System.out.println(index);
+        System.out.println("Количество букв: " + index);
     }
 }
 

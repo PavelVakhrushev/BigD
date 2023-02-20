@@ -26,9 +26,12 @@ public class Task_2 {
         if (str.endsWith("/") || str.endsWith("\\")) {
             System.out.println("Введен некорректный путь до файла");
 
-        } else if (!str.endsWith("/") || !str.endsWith("\\")) {
+        } else if (str.contains("/")) {
             System.out.println("Путь: " + str.substring(0, str.lastIndexOf("/") + 1));
             System.out.println("Имя файла: " + str.substring(str.lastIndexOf("/") + 1));
+        } else if (str.contains("\\")) {
+            System.out.println("Путь: " + str.substring(0, str.lastIndexOf("\\") + 1));
+            System.out.println("Имя файла: " + str.substring(str.lastIndexOf("\\") + 1));
         }
     }
 }

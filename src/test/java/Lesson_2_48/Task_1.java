@@ -16,15 +16,14 @@ public class Task_1 {
     static String str = "Циклом называется многократное выполнение одних и тех же действий.";
     public static String arg;
 
-    public int total() {
-        str = str.replaceAll(" ", "");
-        return str.indexOf(arg);
+    public String total() {
+        return (str.replaceAll(" ", "").substring(0, str.indexOf(arg)));
     }
 
     public static void main(String[] args) {
         arg = args[0];
         Task_1 task_1 = new Task_1();
-        System.out.println("Количество букв: " + task_1.total());
+        System.out.println("Количество букв: " + task_1.total().length());
     }
 }
 

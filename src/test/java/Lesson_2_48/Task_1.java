@@ -1,4 +1,5 @@
 package Lesson_2_48;
+
 /* В классе объявлена статическая переменная строкого типа со значением (кавычки не включены):
 «Циклом называется многократное выполнение одних и тех же действий.»
 
@@ -12,12 +13,18 @@ package Lesson_2_48;
 Через аргументы передается ".", Вывод: 57.
  */
 public class Task_1 {
+    static String str = "Циклом называется многократное выполнение одних и тех же действий.";
+    public static String arg;
+
+    public int total() {
+        str = str.replaceAll(" ", "");
+        return str.indexOf(arg);
+    }
 
     public static void main(String[] args) {
-        String str = "Циклом называется многократное выполнение одних и тех же действий.";
-        str = str.replaceAll(" ", ""); //убираем пробелы
-        int index = str.indexOf(args[0]); // номер буквы в строке
-        System.out.println("Количество букв: " + index);
+        arg = args[0];
+        Task_1 task_1 = new Task_1();
+        System.out.println("Количество букв: " + task_1.total());
     }
 }
 

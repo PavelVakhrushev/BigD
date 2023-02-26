@@ -17,7 +17,7 @@ public class Task_1 {
     public static String arg;
 
     public String total() {
-        return (str.replaceAll(" ", "").substring(0, str.indexOf(arg)));
+        return str.substring(0, str.indexOf(arg)).replaceAll(" ", "");
     }
 
     public static void main(String[] args) {

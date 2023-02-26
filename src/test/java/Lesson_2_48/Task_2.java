@@ -21,18 +21,27 @@ package Lesson_2_48;
  */
 
 public class Task_2 {
-    public static void main(String[] args) {
-        String str = String.valueOf(args[0]);
+
+    static String str;
+
+    public static void print() {
         if (str.endsWith("/") || str.endsWith("\\")) {
             System.out.println("Введен некорректный путь до файла");
-
-        } else if (str.contains("/")) {
-            System.out.println("Путь: " + str.substring(0, str.lastIndexOf("/") + 1));
+            return;
+        }
+        if ((str.contains("/"))) {
+            System.out.println("Путь: " + str.substring(0, (str.lastIndexOf("/") + 1)));
             System.out.println("Имя файла: " + str.substring(str.lastIndexOf("/") + 1));
-        } else if (str.contains("\\")) {
-            System.out.println("Путь: " + str.substring(0, str.lastIndexOf("\\") + 1));
+        } else if ((str.contains("\\"))) {
+            System.out.println("Путь: " + str.substring(0, (str.lastIndexOf((char) 92) + 1)));
             System.out.println("Имя файла: " + str.substring(str.lastIndexOf("\\") + 1));
         }
+
+    }
+
+    public static void main(String[] args) {
+        str = args[0];
+        print();
     }
 }
 

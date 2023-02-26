@@ -23,25 +23,47 @@ package Lesson_2_48;
 public class Task_2 {
 
     static String str;
+    static String a;
 
-    public static void print() {
-        if (str.endsWith("/") || str.endsWith("\\")) {
-            System.out.println("Введен некорректный путь до файла");
-            return;
-        }
-        if ((str.contains("/"))) {
-            System.out.println("Путь: " + str.substring(0, (str.lastIndexOf("/") + 1)));
-            System.out.println("Имя файла: " + str.substring(str.lastIndexOf("/") + 1));
-        } else if ((str.contains("\\"))) {
-            System.out.println("Путь: " + str.substring(0, (str.lastIndexOf((char) 92) + 1)));
-            System.out.println("Имя файла: " + str.substring(str.lastIndexOf("\\") + 1));
-        }
+
+    Task_2(String a) {
+        Task_2.a = a;
+    }
+    //static String a = "/";
+    //static String b = "\\";
+    //public static void print() {
+    //if (str.endsWith("/") || str.endsWith("\\")) {
+    //    System.out.println("Введен некорректный путь до файла");
+    //    return;
+    //}
+
+    //if ((str.contains("/"))) {
+    //    System.out.println("Путь: " + str.substring(0, (str.lastIndexOf("/") + 1)));
+    //    System.out.println("Имя файла: " + str.substring(str.lastIndexOf("/") + 1));
+    //} else if ((str.contains("\\"))) {
+    //    System.out.println("Путь: " + str.substring(0, (str.lastIndexOf("\\") + 1)));
+    //    System.out.println("Имя файла: " + str.substring(str.lastIndexOf("\\") + 1));
+    //}
+    //}
+
+    public void symbol(String a) {
+        Task_2.a = a;
 
     }
+
 
     public static void main(String[] args) {
         str = args[0];
-        print();
+        Task_2 task1 = new Task_2("/");
+        task1.symbol("/");
+        Task_2 task2 = new Task_2("\\");
+        task2.symbol("\\");
+        if (str.endsWith(a)) {
+            System.out.println("Введен некорректный путь до файла");
+        } else {
+            System.out.println("Путь: " + str.substring(0, (str.lastIndexOf(a) + 1)));
+            System.out.println("Имя файла: " + str.substring(str.lastIndexOf(a) + 1));
+
+        }
     }
 }
-

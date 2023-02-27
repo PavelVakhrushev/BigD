@@ -10,13 +10,27 @@ package Lesson_2_52;
 
 public class Task_2_words {
 
-    public static void main(String[] args) {
+    static String[] str;
+    static String max;
 
-        String max = args[1];
-        for (String arg : args) {
-            if (arg.length() > args[1].length())
-                max = arg;
+    public static void print(String[] str) {
+
+        if (str.length == 0) {
+            System.out.println("В командной строке нет аргументов.");
+        } else if (str[1].toLowerCase().matches("[a-z0-9]+")) {
+            for (String arg : str) {
+                if (arg.length() > str[1].length())
+                    max = arg;
+            }
+            System.out.println(max);
+        } else {
+            System.out.println("Аргументы содержит не корректные символы");
         }
-        System.out.println(max);
+    }
+
+
+    public static void main(String[] args) {
+        str = args;
+        print(str);
     }
 }

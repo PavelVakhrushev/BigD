@@ -23,46 +23,28 @@ package Lesson_2_48;
 public class Task_2 {
 
     static String str;
-    static String a;
-
+    private String a;
 
     Task_2(String a) {
-        Task_2.a = a;
-    }
-    //static String a = "/";
-    //static String b = "\\";
-    //public static void print() {
-    //if (str.endsWith("/") || str.endsWith("\\")) {
-    //    System.out.println("Введен некорректный путь до файла");
-    //    return;
-    //}
-
-    //if ((str.contains("/"))) {
-    //    System.out.println("Путь: " + str.substring(0, (str.lastIndexOf("/") + 1)));
-    //    System.out.println("Имя файла: " + str.substring(str.lastIndexOf("/") + 1));
-    //} else if ((str.contains("\\"))) {
-    //    System.out.println("Путь: " + str.substring(0, (str.lastIndexOf("\\") + 1)));
-    //    System.out.println("Имя файла: " + str.substring(str.lastIndexOf("\\") + 1));
-    //}
-    //}
-
-    public void symbol(String a) {
-        Task_2.a = a;
-
+        this.a = a;
     }
 
+    public String symbol(String a) {
+        this.a = a;
+        return a;
+    }
 
     public static void main(String[] args) {
         str = args[0];
         Task_2 task1 = new Task_2("/");
-        task1.symbol("/");
         Task_2 task2 = new Task_2("\\");
-        task2.symbol("\\");
-        if (str.endsWith(a)) {
+        if (str.endsWith(task1.a) || str.endsWith(task2.a)) {
             System.out.println("Введен некорректный путь до файла");
         } else {
-            System.out.println("Путь: " + str.substring(0, (str.lastIndexOf(a) + 1)));
-            System.out.println("Имя файла: " + str.substring(str.lastIndexOf(a) + 1));
+            System.out.println("Путь: "
+                    + str.substring(0, (str.lastIndexOf(task1.a) + 1) | str.lastIndexOf(task2.a) + 1));
+            System.out.println("Имя файла: "
+                    + str.substring(str.lastIndexOf(task1.a) + 1 | str.lastIndexOf(task2.a) + 1));
 
         }
     }

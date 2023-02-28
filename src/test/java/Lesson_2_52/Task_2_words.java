@@ -11,20 +11,21 @@ package Lesson_2_52;
 public class Task_2_words {
 
     static String[] str;
-    static String max;
+
 
     public static void print(String[] str) {
 
         if (str.length == 0) {
-            System.out.println("В командной строке нет аргументов.");
-        } else if (str[1].toLowerCase().matches("[a-z0-9]+")) {
-            for (String arg : str) {
-                if (arg.length() > str[1].length())
-                    max = arg;
-            }
-            System.out.println(max);
+            System.out.println("Аргументы строки не заданы.");
         } else {
-            System.out.println("Аргументы содержит не корректные символы");
+            for (String s : str) {
+                if (s.matches("[a-z0-9]+")) {
+                    System.out.println();
+                } else {
+                    System.out.println("Аргумент: " + s + " содержит корректные символы");
+
+                }
+            }
         }
     }
 
@@ -32,5 +33,11 @@ public class Task_2_words {
     public static void main(String[] args) {
         str = args;
         print(str);
+        String str1 = str[0];
+        for (int j = 1; j < str.length; j++) {
+            if (str1.length() < str[j].length())
+                str1 = str[j];
+        }
+        System.out.println("Слово наибольшей длины: " + str1);
     }
 }

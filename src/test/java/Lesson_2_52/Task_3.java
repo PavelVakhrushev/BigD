@@ -10,22 +10,17 @@ public class Task_3 {
 
     static void array() {
         int[][] arr = new int[5][7];
-        for (int i = 0; i < arr.length ; i++) {
+        for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 arr[i][j] = (int) (Math.random() * 19) - 9;
-
-                //System.out.print(arr[i][j] + " ");
             }
-            //System.out.println();
         }
         sortArray(arr);
 
         for (int[] ints : arr) {
             System.out.println(Arrays.toString(ints));
         }
-
     }
-
 
     public static int getSum(int[] array) {
         int sum = 0;
@@ -35,7 +30,7 @@ public class Task_3 {
         return sum;
     }
 
-    public static void sortArray (int[][] arr) {
+    public static void sortArray(int[][] arr) {
         Arrays.sort(arr, (a, b) -> {
             int x = getSum(b);
             int y = getSum(a);

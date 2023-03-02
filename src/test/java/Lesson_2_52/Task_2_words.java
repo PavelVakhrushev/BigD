@@ -15,26 +15,26 @@ public class Task_2_words {
 
     public static void print(String[] str) {
 
-        if (str.length == 0) {
+        if (str.length == 0) {  // проверяем на наличие аргуметов
             System.out.println("Аргументы строки не заданы.");
             return;
         }
 
-        String longestWord = str[0];
+        StringBuilder longestWord = new StringBuilder(str[0]);
         int maxLength = longestWord.length();
 
         for (int i = 1; i < str.length; i++) {
             String str1 = str[i];
-            if (!str1.matches("^[a-z-0-9]+$")) {
+            if (!str1.matches("^[a-z-0-9]+$")) { //проверяем на наличие строчных латинских букв и чисел
                 System.out.println("Аргумент: " + str1 + " содержит некорректные символы");
                 return;
             }
-            int length = str1.length();
+            int length = str1.length();  // проверяем на наличие аргументов одной длины
             if (length > maxLength) {
                 maxLength = length;
-                longestWord = str1;
+                longestWord = new StringBuilder(str1);
             } else if (length == maxLength) {
-                longestWord += ", " + str1;
+                longestWord.append(", ").append(str1);
             }
         }
         System.out.println("Самое длинное слово: " + longestWord);

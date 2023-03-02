@@ -20,10 +20,15 @@ public class Task_2_words {
         } else {
             for (String s : str) {
                 if (s.matches("[a-z0-9]+")) {
-                    System.out.println();
+                    String longestWord = "";
+                    for (String str1 : str) {
+                        if (str1.length() > longestWord.length())
+                            longestWord = str1;
+                    }
+                    System.out.println("Самое длинное слово: " + longestWord);
+                    break;
                 } else {
-                    System.out.println("Аргумент: " + s + " содержит корректные символы");
-
+                    System.out.println("Аргумент: " + s + " содержит некорректные символы");
                 }
             }
         }
@@ -33,11 +38,5 @@ public class Task_2_words {
     public static void main(String[] args) {
         str = args;
         print(str);
-        String str1 = str[0];
-        for (int j = 1; j < str.length; j++) {
-            if (str1.length() < str[j].length())
-                str1 = str[j];
-        }
-        System.out.println("Слово наибольшей длины: " + str1);
     }
 }

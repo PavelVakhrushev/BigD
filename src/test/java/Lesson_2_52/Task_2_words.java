@@ -17,23 +17,28 @@ public class Task_2_words {
 
         if (str.length == 0) {
             System.out.println("Аргументы строки не заданы.");
-        } else {
-            for (String s : str) {
-                if (s.matches("[a-z0-9]+")) {
-                    String longestWord = "";
-                    for (String str1 : str) {
-                        if (str1.length() > longestWord.length())
-                            longestWord = str1;
-                    }
-                    System.out.println("Самое длинное слово: " + longestWord);
-                    break;
-                } else {
-                    System.out.println("Аргумент: " + s + " содержит некорректные символы");
-                }
+            return;
+        }
+
+        String longestWord = str[0];
+        int maxLength = longestWord.length();
+
+        for (int i = 1; i < str.length; i++) {
+            String str1 = str[i];
+            if (!str1.matches("^[a-z-0-9]+$")) {
+                System.out.println("Аргумент: " + str1 + " содержит некорректные символы");
+                return;
+            }
+            int length = str1.length();
+            if (length > maxLength) {
+                maxLength = length;
+                longestWord = str1;
+            } else if (length == maxLength) {
+                longestWord += ", " + str1;
             }
         }
+        System.out.println("Самое длинное слово: " + longestWord);
     }
-
 
     public static void main(String[] args) {
         str = args;

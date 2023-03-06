@@ -9,20 +9,24 @@ import java.util.Arrays;
 public class Task_3 {
 
     static void array() {
-        int[][] arr = new int[5][7];
+        int rows = 5; // максимальное количестов строк
+        int cols = 7; // максимально количество столбцов
+        int[][] arr = new int[rows][]; // обявление зубчатого массива
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
+            int colsRandom = (int) (Math.random() * cols + 1); // определение рандомного количества столбцов в строке
+            arr[i] = new int[colsRandom]; // выделение памяти на новый массив с рандомным кол-вом столбцов
+            for (int j = 0; j < colsRandom; j++) { //заполнение рандомными значениями строк массива
                 arr[i][j] = (int) (Math.random() * 19) - 9;
             }
         }
-        sortArray(arr);
+        sortArray(arr); // применение метода сортировки к создаваемому массиву
 
-        for (int[] ints : arr) {
-            System.out.println(Arrays.toString(ints));
+        for (int i = 0; i < rows; i++) { // вывод массива после сортировки
+            System.out.println(Arrays.toString(arr[i]));
         }
     }
 
-    public static int getSum(int[] array) {
+    public static int getSum(int[] array) {  // метод для подсчета суммы элементов массива в строке
         int sum = 0;
         for (int j : array) {
             sum += j;
@@ -30,7 +34,7 @@ public class Task_3 {
         return sum;
     }
 
-    public static void sortArray(int[][] arr) {
+    public static void sortArray(int[][] arr) { // метод для сортировки массива в порядке убывания сумм
         Arrays.sort(arr, (a, b) -> {
             int x = getSum(b);
             int y = getSum(a);

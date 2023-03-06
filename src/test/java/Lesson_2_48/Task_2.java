@@ -23,29 +23,22 @@ package Lesson_2_48;
 public class Task_2 {
 
     static String str;
-    private String a;
+    private final String slash;
 
-    Task_2(String a) {
-        this.a = a;
-    }
-
-    public String symbol(String a) {
-        this.a = a;
-        return a;
+    Task_2(String slash) {
+        this.slash = slash;
     }
 
     public static void main(String[] args) {
         str = args[0];
         Task_2 task1 = new Task_2("/");
         Task_2 task2 = new Task_2("\\");
-        if (str.endsWith(task1.a) || str.endsWith(task2.a)) {
+        int indexToSlash = (str.lastIndexOf(task1.slash) + 1) | (str.lastIndexOf(task2.slash) + 1);
+        if (str.endsWith(task1.slash) || str.endsWith(task2.slash)) {
             System.out.println("Введен некорректный путь до файла");
         } else {
-            System.out.println("Путь: "
-                    + str.substring(0, (str.lastIndexOf(task1.a) + 1) | str.lastIndexOf(task2.a) + 1));
-            System.out.println("Имя файла: "
-                    + str.substring(str.lastIndexOf(task1.a) + 1 | str.lastIndexOf(task2.a) + 1));
-
+            System.out.println("Путь: " + str.substring(0, indexToSlash));
+            System.out.println("Имя файла: " + str.substring(indexToSlash));
         }
     }
 }

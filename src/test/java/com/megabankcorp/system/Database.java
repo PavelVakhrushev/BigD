@@ -41,21 +41,26 @@ Account
 
     Для суммы используйте тип BigDecimal, для номеров - long*/
 
-public class Database {
 
-    void deposit() {
+import com.megabankcorp.records.Account;
 
-    }
+import java.math.BigDecimal;
 
-    void withdraw() {
+public abstract class Database {
 
-    }
 
-    void getAmount() {
+    public abstract void deposit(Account numAccount, BigDecimal amount); // сохраняет указанную сумму на указанный счет
 
-    }
 
-    void transfer() {
+    public abstract void withdraw(Account numAccount, BigDecimal amount);  // снимает указанную сумму с указанного счета
 
+
+    abstract void getAmount(Account numAccount, BigDecimal amount); //получает значение суммы с указанного счета
+
+
+    void transfer(Account from, Account to, BigDecimal amount) {
+        //передает указанную сумму с одного указанного счета на другой
+        withdraw(from, amount);
+        deposit(to, amount);
     }
 }

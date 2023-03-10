@@ -48,15 +48,14 @@ import java.math.BigDecimal;
 
 public abstract class Database {
 
+    public abstract void deposit(Account account, BigDecimal amount);
+    // сохраняет указанную сумму на указанный счет
 
-    public abstract void deposit(Account numAccount, BigDecimal amount); // сохраняет указанную сумму на указанный счет
+    public abstract void withdraw(Account account, BigDecimal amount);
+    // снимает указанную сумму с указанного счета
 
-
-    public abstract void withdraw(Account numAccount, BigDecimal amount);  // снимает указанную сумму с указанного счета
-
-
-    abstract void getAmount(Account numAccount, BigDecimal amount); //получает значение суммы с указанного счета
-
+    protected abstract BigDecimal getAmount(Account account);
+    //получает значение суммы с указанного счета
 
     void transfer(Account from, Account to, BigDecimal amount) {
         //передает указанную сумму с одного указанного счета на другой

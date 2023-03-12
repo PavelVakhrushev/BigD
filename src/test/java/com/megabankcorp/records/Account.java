@@ -1,7 +1,5 @@
 package com.megabankcorp.records;
 
-import com.megabankcorp.system.Database;
-
 import java.math.BigDecimal;
 
 public class Account {
@@ -13,12 +11,12 @@ public class Account {
         return idClient;
     }
 
-    public BigDecimal getBalance() {
+    public BigDecimal getBalance() { // получаем баланс на счете клиента банка
         return balance;
     }
 
 
-    public long getCurrentAccount() {
+    public long getCurrentAccount() { // получаем текущий номер счета клиента банка
         return currentAccount;
     }
 

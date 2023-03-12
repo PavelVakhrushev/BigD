@@ -10,11 +10,11 @@ public class FruitCatalogue {
     private final Fruit[] fruits;
 
     public FruitCatalogue() {
-        fruits = new Fruit[] {
-                new Apple("Apple", 1.5,new BigDecimal("500.00") ),
+        fruits = new Fruit[]{
+                new Apple("Apple", 1.5, new BigDecimal("500.00")),
                 new Orange("Orange", 2.0, new BigDecimal("400.50")),
-                new Banana("Banana", 1.0,new BigDecimal("500.50") ),
-                new Pineapple("Pineapple", 5.0,new BigDecimal("600.50") )
+                new Banana("Banana", 1.0, new BigDecimal("500.50")),
+                new Pineapple("Pineapple", 5.0, new BigDecimal("600.50"))
         };
     }
 

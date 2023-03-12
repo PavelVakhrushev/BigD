@@ -18,7 +18,7 @@ public class FruitBase {
         Cargo cargo = new Cargo();
         // Поиск фруктов в каталоге
         for (String arg : args) {
-            Fruit fruit = fruitBase.findFruit(arg);
+            Fruit fruit = fruitCatalogue.findFruit(arg);
             if (fruit != null) {
                 // Если фрукт найден, то добавляем его в груз
                 cargo.addFruit(fruit);

@@ -35,6 +35,11 @@ public class Cargo {
         newFruits[len] = fruit;
         fruits = newFruits;
     }
+
+    public boolean isEmpty() {
+
+        return false;
+    }
 }
 
 

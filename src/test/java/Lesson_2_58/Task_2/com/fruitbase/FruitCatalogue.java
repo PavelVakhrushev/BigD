@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 
 public class FruitCatalogue {
 
+    public static FruitCatalogue fruitBase;
     private final Fruit[] fruits;
 
     public FruitCatalogue() {

@@ -1,4 +1,4 @@
-package com.megabankcorp.system;
+package Lesson_2_58.Task_1.megabankcorp.system;
 
 /* Представим, что вы занимаетесь проектированием банковской системы учета.
 Ваша задача описать базовые классы, на основании которых могут делаться остальные.
@@ -11,7 +11,7 @@ Database
     Или реализации методов по-умолчанию.
     Вам наследников реализовывать не надо.
 
-    находится в пакете com.megabankcorp.system
+    находится в пакете Lesson_2_58.Task_1.megabankcorp.system
     содержит заготовки методов
         - deposit - сохраняет указанную сумму на указанный счет
             не содержит реализации, просто сигнатура с описанием
@@ -33,7 +33,7 @@ Database
     Для параметров счетов используете класс Account
 
 Account
-    это простой класс, который находится в пакете com.megabankcorp.records
+    это простой класс, который находится в пакете Lesson_2_58.Task_1.megabankcorp.records
     содержит
         поле для текущей суммы на счете
         поле для текущего номера счета
@@ -42,7 +42,7 @@ Account
     Для суммы используйте тип BigDecimal, для номеров - long*/
 
 
-import com.megabankcorp.records.Account;
+import Lesson_2_58.Task_1.megabankcorp.records.Account;
 
 import java.math.BigDecimal;
 

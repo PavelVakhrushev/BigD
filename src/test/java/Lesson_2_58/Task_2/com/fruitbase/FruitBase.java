@@ -2,7 +2,7 @@ package Lesson_2_58.Task_2.com.fruitbase;
 
 import Lesson_2_58.Task_2.com.fruitbase.fruits.Fruit;
 
-import static Lesson_2_58.Task_2.com.fruitbase.FruitCatalogue.fruitBase;
+import static Lesson_2_58.Task_2.com.fruitbase.FruitCatalogue.*;
 
 public class FruitBase {
 
@@ -14,16 +14,16 @@ public class FruitBase {
     }
 
     public static Cargo takeOrder(String order) {
-        String[] args = order.split(" ");
+        String[] orderItems = order.split(" ");
         Cargo cargo = new Cargo();
         // Поиск фруктов в каталоге
-        for (String arg : args) {
-            Fruit fruit = fruitCatalogue.findFruit(arg);
-            if (fruit != null) {
-                // Если фрукт найден, то добавляем его в груз
-                cargo.addFruit(fruit);
+        for (String item : orderItems) {
+            if (fruitCatalogue.contains(item)) {
+                cargo.addFruit(fruitCatalogue.findFruit(fruitBase.toString()));
+
             }
         }
+
         // Если груз пустой, то создаем груз с нулевым количеством фруктов
         if (cargo.isEmpty()) {
             cargo = new Cargo();

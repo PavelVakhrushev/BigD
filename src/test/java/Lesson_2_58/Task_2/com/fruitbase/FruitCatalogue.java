@@ -28,5 +28,8 @@ public class FruitCatalogue {
         return null;
     }
 
+    public boolean contains(String item) {
+        return false;
+    }
 }
 

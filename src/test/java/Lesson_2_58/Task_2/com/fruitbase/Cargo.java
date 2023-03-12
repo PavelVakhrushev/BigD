@@ -6,18 +6,20 @@ import java.math.BigDecimal;
 
 public class Cargo {
 
-    private Fruit[] fruits;
+    private final Fruit[] fruits;
+    private int count;
 
     public Cargo() {
-        fruits = new Fruit[0];
+        fruits = new Fruit[10];
+        count = 0;
     }
 
     public double getWeight() {
-        double weight = 0.0;
-        for (Fruit fruit : fruits) {
-            weight += fruit.getWeight();
+        double totalWeight = 0;
+        for (int i = 0; i < count; i++) {
+            totalWeight += fruits[i].getWeight();
         }
-        return weight;
+        return totalWeight;
     }
 
     public BigDecimal getPrice() {
@@ -29,11 +31,9 @@ public class Cargo {
     }
 
     void addFruit(Fruit fruit) {
-        int len = fruits.length;
-        Fruit[] newFruits = new Fruit[len + 1];
-        System.arraycopy(fruits, 0, newFruits, 0, len);
-        newFruits[len] = fruit;
-        fruits = newFruits;
+        if (count < fruits.length) {
+            fruits[count++] = fruit;
+        }
     }
 
     public boolean isEmpty() {

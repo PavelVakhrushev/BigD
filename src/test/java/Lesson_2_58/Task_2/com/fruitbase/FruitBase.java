@@ -20,7 +20,6 @@ package Lesson_2_58.Task_2.com.fruitbase;
 
 import Lesson_2_58.Task_2.com.fruitbase.fruits.Fruit;
 
-
 public class FruitBase {
 
     private FruitCatalogue fruitCatalogue;
@@ -29,10 +28,10 @@ public class FruitBase {
         this.fruitCatalogue = new FruitCatalogue();
     }
 
-    public Cargo takeOrder(String order) {
-        String[] orderList = order.split("\\s+");
+    public Cargo takeOrder(String orderClient) {
+        String[] orderChecklist = orderClient.split("\\s+");
         Cargo cargo = new Cargo();
-        for (String orderItem : orderList) {
+        for (String orderItem : orderChecklist) {
             Fruit fruit = this.fruitCatalogue.findFruit(orderItem);
             if (fruit != null) {
                 cargo.addFruit(fruit);
@@ -40,7 +39,6 @@ public class FruitBase {
         }
         return cargo;
     }
-
 
     public static void main(String[] args) {
         FruitBase fruitBase = new FruitBase();

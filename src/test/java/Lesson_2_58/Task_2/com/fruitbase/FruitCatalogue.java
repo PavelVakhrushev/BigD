@@ -9,9 +9,7 @@ package Lesson_2_58.Task_2.com.fruitbase;
         по переданному слову проверяет есть ли информация о таком фрукте
         если есть, то возвращает Fruit. Если нет, то возвращает null.*/
 
-
 import Lesson_2_58.Task_2.com.fruitbase.fruits.*;
-
 
 class FruitCatalogue {
     private Fruit[] fruits;

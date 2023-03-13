@@ -1,35 +1,33 @@
 package Lesson_2_58.Task_2.com.fruitbase;
 
+/* - класс FruitCatalogue
+    находится в пакете com.fruitbase
+    содержит поле массив Fruit - список записей известных фруктов
+    содержит конструктор без параметров
+        при создании во внутренний массив добавляются записи-экзмепляры известных фруктов
+    содержит метод findFruit, доступный только в пакете
+        по переданному слову проверяет есть ли информация о таком фрукте
+        если есть, то возвращает Fruit. Если нет, то возвращает null.*/
+
 
 import Lesson_2_58.Task_2.com.fruitbase.fruits.*;
 
 import java.math.BigDecimal;
 
-public class FruitCatalogue {
-
-    public static FruitCatalogue fruitBase;
-    private final Fruit[] fruits;
+class FruitCatalogue {
+    private Fruit[] fruits;
 
     public FruitCatalogue() {
-        fruits = new Fruit[]{
-                new Apple("Apple", 1.5, new BigDecimal("500.00")),
-                new Orange("Orange", 2.0, new BigDecimal("400.50")),
-                new Banana("Banana", 1.0, new BigDecimal("500.50")),
-                new Pineapple("Pineapple", 5.0, new BigDecimal("600.50"))
-        };
+        this.fruits = new Fruit[]
+                {new Apple(), new Orange(), new Banana(), new Pineapple()};
     }
 
     Fruit findFruit(String name) {
-        for (Fruit fruit : fruits) {
+        for (Fruit fruit : this.fruits) {
             if (fruit.getName().equalsIgnoreCase(name)) {
                 return fruit;
             }
         }
         return null;
     }
-
-    public boolean contains(String item) {
-        return false;
-    }
 }
-

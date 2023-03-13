@@ -12,7 +12,6 @@ package Lesson_2_58.Task_2.com.fruitbase;
 
 import Lesson_2_58.Task_2.com.fruitbase.fruits.*;
 
-import java.math.BigDecimal;
 
 class FruitCatalogue {
     private Fruit[] fruits;

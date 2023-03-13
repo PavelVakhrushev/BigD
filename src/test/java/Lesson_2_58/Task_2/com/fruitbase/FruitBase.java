@@ -20,7 +20,6 @@ package Lesson_2_58.Task_2.com.fruitbase;
 
 import Lesson_2_58.Task_2.com.fruitbase.fruits.Fruit;
 
-import static Lesson_2_58.Task_2.com.fruitbase.FruitCatalogue.*;
 
 public class FruitBase {
 
@@ -46,10 +45,18 @@ public class FruitBase {
     public static void main(String[] args) {
         FruitBase fruitBase = new FruitBase();
         if (args.length > 0) {
-            String order = String.join(" ", args);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < args.length; i++) {
+                sb.append(args[i]);
+                if (i < args.length - 1) {
+                    sb.append(" ");
+                }
+            }
+            String order = sb.toString();
             Cargo cargo = fruitBase.takeOrder(order);
-            System.out.println(cargo);
+            System.out.println(cargo + " у.е.");
+        } else {
+            System.out.println("В заказ ничего не добавлено!");
         }
     }
-
 }

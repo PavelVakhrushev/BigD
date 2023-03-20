@@ -15,8 +15,7 @@ class FruitCatalogue {
     private Fruit[] fruits;
 
     public FruitCatalogue() {
-        this.fruits = new Fruit[]
-                {new Apple(), new Orange(), new Banana(), new Pineapple()};
+        this.fruits = new Fruit[]{new Apple(), new Orange(), new Banana(), new Pineapple()};
     }
 
     Fruit findFruit(String name) {

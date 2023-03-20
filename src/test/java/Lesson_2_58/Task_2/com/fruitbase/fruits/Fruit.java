@@ -13,9 +13,9 @@ package Lesson_2_58.Task_2.com.fruitbase.fruits;
 import java.math.BigDecimal;
 
 public abstract class Fruit {
-    private double weight;
-    private BigDecimal price;
-    private String name;
+    double weight;
+    BigDecimal price;
+    String name;
 
     public Fruit(double weight, BigDecimal price, String name) {
         this.weight = weight;

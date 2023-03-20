@@ -18,7 +18,7 @@ public class Cargo {
     private Fruit[] fruits;
     private int[] counts;
 
-    public Cargo() {
+    Cargo() {
         fruits = new Fruit[0];
         counts = new int[0];
     }

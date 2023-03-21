@@ -20,40 +20,34 @@ package Lesson_2_58.Task_2.com.fruitbase;
 
 import Lesson_2_58.Task_2.com.fruitbase.fruits.Fruit;
 
+import java.util.Arrays;
+
 public class FruitBase {
 
     private FruitCatalogue fruitCatalogue;
 
-    public FruitBase() {
+    public FruitBase() {  // конструктор без параметров
         this.fruitCatalogue = new FruitCatalogue();
     }
 
-    public Cargo takeOrder(String orderClient) {
-        String[] orderChecklist = orderClient.split("\\s+");
-        Cargo cargo = new Cargo();
-        for (String orderItem : orderChecklist) {
-            Fruit fruit = this.fruitCatalogue.findFruit(orderItem);
-            if (fruit != null) {
-                cargo.addFruit(fruit);
+    public Cargo takeOrder(String... orderItems) {
+        Cargo cargo = new Cargo(); // создаем новый груз
+        for (String orderItem : orderItems) {
+            Fruit fruit = this.fruitCatalogue.findFruit(orderItem); // ищем фрукт по его названию
+            if (fruit != null) { // если фрукт найден
+                cargo.addFruit(fruit); // добавляем его в груз
             }
         }
-        return cargo;
+        return cargo; // возвращаем груз со всеми найденными фруктами
     }
 
+
     public static void main(String[] args) {
-        FruitBase fruitBase = new FruitBase();
-        if (args.length > 0) {
-            StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < args.length; i++) {
-                sb.append(args[i]);
-                if (i < args.length - 1) {
-                    sb.append(" ");
-                }
-            }
-            String order = sb.toString();
-            Cargo cargo = fruitBase.takeOrder(order);
+        FruitBase fruitBase = new FruitBase(); // создаем новую фруктовыю базу
+        if (args.length > 0) { // проверка наличия заказа от пользователя
+            Cargo cargo = fruitBase.takeOrder(args); // заказ передается в метод takeOrder
             System.out.println(cargo + " у.е.");
-        } else {
+        } else { // если заказ был пустой
             System.out.println("В заказ ничего не добавлено!");
         }
     }

@@ -1,4 +1,4 @@
-package Lesson_2_58.Task_2.com.fruitbase.customers;
+package Lesson_2_65.fruitbase.customers;
 
 import java.util.ArrayList;
 import java.util.HashSet;

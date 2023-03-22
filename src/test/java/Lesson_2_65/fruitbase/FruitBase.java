@@ -1,4 +1,4 @@
-package Lesson_2_58.Task_2.com.fruitbase;
+package Lesson_2_65.fruitbase;
 
 /* - класс FruitBase
     находится в пакете com.fruitbase
@@ -18,8 +18,7 @@ package Lesson_2_58.Task_2.com.fruitbase;
             если есть заказ, то он передается в метод takeOrder
             выводим результат*/
 
-import Lesson_2_58.Task_2.com.fruitbase.fruits.Fruit;
-
+import Lesson_2_65.fruitbase.fruits.Fruit;
 
 public class FruitBase {
 

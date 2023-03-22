@@ -39,6 +39,33 @@ public class Cargo {
         return price;
     }
 
+    public Fruit[] getFruits() {
+        Fruit[] result = new Fruit[fruits.length];
+        System.arraycopy(fruits, 0, result, 0, fruits.length);
+        return result;
+    }
+
+    public Fruit removeFruit(Fruit fruit) {
+        int index = -1;
+        for (int i = 0; i < fruits.length; i++) {
+            if (fruits[i].getName().equals(fruit.getName())) {
+                index = i;
+                break;
+            }
+        }
+        if (index == -1) {
+            return null;
+        }
+        Fruit result = fruits[index];
+        if (counts[index] > 1) {
+            counts[index]--;
+        } else {
+            //fruits = ArrayUtils.remove(fruits, index);
+            //counts = ArrayUtils.remove(counts, index);
+        }
+        return result;
+    }
+
     void addFruit(Fruit fruit) {
         for (int i = 0; i < fruits.length; i++) {
             if (fruits[i].getName().equals(fruit.getName())) {

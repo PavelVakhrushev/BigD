@@ -58,7 +58,7 @@ public class Cargo {
         size++;
     }
 
-    public double removeFruit(String name) {
+    public void removeFruit(String name) {
         for (int i = 0; i < size; i++) {
             if (fruits[i].getName().equals(name)) {
                 counts[i]--;
@@ -69,12 +69,11 @@ public class Cargo {
                         counts[j] = counts[j + 1];
                     }
                     size--;
-                    return weight;
+                    return;
                 }
-                return fruits[i].getWeight();
+                return;
             }
         }
-        return 0;
     }
 
     public Fruit[] getFruits() {

@@ -40,13 +40,13 @@ public class FruitBase {
     }
 
 
-    public static void main(String[] args) {
-        FruitBase fruitBase = new FruitBase(); // создаем новую фруктовыю базу
-        if (args.length > 0) { // проверка наличия заказа от пользователя
-            Cargo cargo = fruitBase.takeOrder(args); // заказ передается в метод takeOrder
-            System.out.println(cargo + " у.е.");
-        } else { // если заказ был пустой
-            System.out.println("В заказ ничего не добавлено!");
-        }
-    }
+   // public static void main(String[] args) {
+   //     FruitBase fruitBase = new FruitBase(); // создаем новую фруктовыю базу
+   //     if (args.length > 0) { // проверка наличия заказа от пользователя
+   //         Cargo cargo = fruitBase.takeOrder(args); // заказ передается в метод takeOrder
+   //         System.out.println(cargo + " у.е.");
+   //     } else { // если заказ был пустой
+   //         System.out.println("В заказ ничего не добавлено!");
+   //     }
+   // }
 }

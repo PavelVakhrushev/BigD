@@ -1,21 +1,26 @@
 package Lesson_2_65.fruitbase.customers;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-
 public class UniqueCustomer extends Customer {
     public UniqueCustomer(String name) {
         super(name);
     }
 
     @Override
-    public void takeFruits(ArrayList<String> fruits) {
-        HashSet<String> uniqueFruits = new HashSet<String>(purchases);
+    public void takeFruits(String[] fruits) {
         for (String fruit : fruits) {
-            if (!uniqueFruits.contains(fruit)) {
-                purchases.add(fruit);
-                uniqueFruits.add(fruit);
+            if (!isPurchased(fruit)) {
+                purchases[index] = fruit;
+                index++;
             }
         }
+    }
+
+    private boolean isPurchased(String fruit) {
+        for (int i = 0; i < index; i++) {
+            if (purchases[i].equals(fruit)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

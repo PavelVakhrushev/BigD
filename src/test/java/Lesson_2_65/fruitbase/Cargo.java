@@ -14,18 +14,21 @@ import Lesson_2_65.fruitbase.fruits.Fruit;
 import java.math.BigDecimal;
 import java.util.Arrays;
 
+
 public class Cargo {
     private Fruit[] fruits;
     private int[] counts;
+    private int size;
 
-    Cargo() {
-        fruits = new Fruit[0];
-        counts = new int[0];
+    public Cargo() {
+        fruits = new Fruit[10];
+        counts = new int[10];
+        size = 0;
     }
 
     public double getWeight() {
         double weight = 0;
-        for (int i = 0; i < fruits.length; i++) {
+        for (int i = 0; i < size; i++) {
             weight += fruits[i].getWeight() * counts[i];
         }
         return weight;
@@ -33,55 +36,58 @@ public class Cargo {
 
     public BigDecimal getPrice() {
         BigDecimal price = BigDecimal.valueOf(0);
-        for (int i = 0; i < fruits.length; i++) {
+        for (int i = 0; i < size; i++) {
             price = price.add(fruits[i].getPrice().multiply(BigDecimal.valueOf(counts[i])));
         }
         return price;
     }
 
-    public Fruit[] getFruits() {
-        Fruit[] result = new Fruit[fruits.length];
-        System.arraycopy(fruits, 0, result, 0, fruits.length);
-        return result;
-    }
-
-    public Fruit removeFruit(Fruit fruit) {
-        int index = -1;
-        for (int i = 0; i < fruits.length; i++) {
-            if (fruits[i].getName().equals(fruit.getName())) {
-                index = i;
-                break;
-            }
-        }
-        if (index == -1) {
-            return null;
-        }
-        Fruit result = fruits[index];
-        if (counts[index] > 1) {
-            counts[index]--;
-        } else {
-            //fruits = ArrayUtils.remove(fruits, index);
-            //counts = ArrayUtils.remove(counts, index);
-        }
-        return result;
-    }
-
-    void addFruit(Fruit fruit) {
-        for (int i = 0; i < fruits.length; i++) {
+    public void addFruit(Fruit fruit) {
+        for (int i = 0; i < size; i++) {
             if (fruits[i].getName().equals(fruit.getName())) {
                 counts[i]++;
                 return;
             }
         }
-        fruits = Arrays.copyOf(fruits, fruits.length + 1);
-        fruits[fruits.length - 1] = fruit;
-        counts = Arrays.copyOf(counts, counts.length + 1);
-        counts[counts.length - 1] = 1;
+        if (size == fruits.length) {
+            fruits = Arrays.copyOf(fruits, fruits.length * 2);
+            counts = Arrays.copyOf(counts, counts.length * 2);
+        }
+        fruits[size] = fruit;
+        counts[size] = 1;
+        size++;
+    }
+
+    public double removeFruit(String name) {
+        for (int i = 0; i < size; i++) {
+            if (fruits[i].getName().equals(name)) {
+                counts[i]--;
+                if (counts[i] == 0) {
+                    double weight = fruits[i].getWeight();
+                    for (int j = i; j < size - 1; j++) {
+                        fruits[j] = fruits[j + 1];
+                        counts[j] = counts[j + 1];
+                    }
+                    size--;
+                    return weight;
+                }
+                return fruits[i].getWeight();
+            }
+        }
+        return 0;
+    }
+
+    public Fruit[] getFruits() {
+        Fruit[] result = new Fruit[size];
+        for (int i = 0; i < size; i++) {
+            result[i] = fruits[i];
+        }
+        return result;
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < fruits.length; i++) {
+        for (int i = 0; i < size; i++) {
             sb.append(counts[i]).append(" ").append(fruits[i].getName()).append("\n");
         }
         sb.append("Общий вес: ").append(getWeight()).append(" кг." + "\n");
@@ -89,5 +95,4 @@ public class Cargo {
         return sb.toString();
     }
 }
-
 

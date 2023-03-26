@@ -50,10 +50,9 @@ public abstract class Fruit {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof Fruit)) {
+        if (!(obj instanceof Fruit other)) {
             return false;
         }
-        Fruit other = (Fruit) obj;
         return Double.compare(weight, other.weight) == 0 &&
                 price.equals(other.price) &&
                 name.equals(other.name) &&

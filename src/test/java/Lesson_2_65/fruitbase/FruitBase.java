@@ -22,7 +22,7 @@ import Lesson_2_65.fruitbase.fruits.Fruit;
 
 public class FruitBase {
 
-    private FruitCatalogue fruitCatalogue;
+    private final FruitCatalogue fruitCatalogue;
 
     public FruitBase() {  // конструктор без параметров
         this.fruitCatalogue = new FruitCatalogue();

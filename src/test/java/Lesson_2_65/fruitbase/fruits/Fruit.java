@@ -27,7 +27,7 @@ public abstract class Fruit {
 
     Freshness freshness; // добавляем поле для состояния свежести фрукта
 
-    public Fruit(double weight, BigDecimal price, String name) {
+    public Fruit(double weight, BigDecimal price, String name, Freshness freshness) {
         this.weight = weight;
         this.price = price;
         this.name = name;

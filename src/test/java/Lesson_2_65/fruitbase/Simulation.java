@@ -2,7 +2,8 @@ package Lesson_2_65.fruitbase;
 
 /*  Также добавим специальный класс Simulation, внутри которого теперь будет выполняться программа.
     Для этого в него перенесем метод main из Fruitbase и внесем изменения:
-    - после создания объекта FruitBase создается массив покупателей, в который будут входит экземпляры обоих видов покупателей
+    - после создания объекта FruitBase создается массив покупателей, в который будут входит экземпляры обоих видов
+    покупателей
     - далее для каждого покупателя:
         выполняется заказ и формируется груз
         выводится информации о грузе
@@ -18,7 +19,8 @@ import Lesson_2_65.fruitbase.fruits.Fruit;
 public class Simulation {
     public static void main(String[] args) {
         FruitBase fruitBase = new FruitBase(); // создаем новую фруктовую базу
-        Customer[] customers = {new FreshCustomer("Толя"), new UniqueCustomer("Коля")}; // создаем массив покупателей
+        Customer[] customers = {new FreshCustomer("Толя"), new UniqueCustomer("Коля")};
+        // создаем массив покупателей
 
         for (Customer customer : customers) { // для каждого покупателя:
             Cargo cargo = fruitBase.takeOrder(args); // выполняем заказ и формируем груз

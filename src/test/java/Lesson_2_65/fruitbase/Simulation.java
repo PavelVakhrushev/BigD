@@ -18,7 +18,7 @@ import Lesson_2_65.fruitbase.fruits.Fruit;
 public class Simulation {
     public static void main(String[] args) {
         FruitBase fruitBase = new FruitBase(); // создаем новую фруктовую базу
-        Customer[] customers = { new FreshCustomer("Толя"), new UniqueCustomer("Коля") }; // создаем массив покупателей
+        Customer[] customers = {new FreshCustomer("Толя"), new UniqueCustomer("Коля")}; // создаем массив покупателей
 
         for (Customer customer : customers) { // для каждого покупателя:
             Cargo cargo = fruitBase.takeOrder(args); // выполняем заказ и формируем груз
@@ -31,7 +31,7 @@ public class Simulation {
                 System.out.println(fruit);
             }
 
-            cargo.removeFruit("apple"); // удаляем выбранные фрукты из груза
+            cargo.removeFruit("berries"); // удаляем выбранные фрукты из груза
             System.out.println("\nОставшиеся фрукты в грузе для " + customer.getClass().getSimpleName() + ":");
             System.out.println(cargo); // выводим информацию об оставшемся грузе
         }
@@ -40,6 +40,5 @@ public class Simulation {
             System.out.println("В заказ ничего не добавлено!");
         }
     }
-
 
 }

@@ -8,6 +8,14 @@ package Lesson_2_65.fruitbase.fruits;
     содержит общедоступный метод по-умолчанию для получения значения веса getWeight
     содержит общедоступный метод по-умолчанию для получения значения цены getPrice
     содержит общедоступный метод по-умолчанию для получения значения цены getName
+
+    Для фруктов нужно добавить
+        - внутренний параметр freshness - отражает состояние свежести фрукта;
+          для значений нужно завести enum с как минимум состояниями: FRESH, OVERRIPED, SPOILED
+          при создании объект имеет состояние FRESH
+        - метод equals
+        - метод hashcode
+        - метод isFresh - возвращает true, если параметр freshness имеет состояние FRESH
     */
 
 import java.math.BigDecimal;
@@ -46,13 +54,11 @@ public abstract class Fruit {
         this.freshness = freshness;
 
     }
+
     public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof Fruit other)) {
-            return false;
-        }
+        if (obj == this) return true;
+        if (!(obj instanceof Fruit other)) return false;
+
         return Double.compare(weight, other.weight) == 0 &&
                 price.equals(other.price) &&
                 name.equals(other.name) &&

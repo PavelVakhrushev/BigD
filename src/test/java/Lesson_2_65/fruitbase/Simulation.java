@@ -27,9 +27,9 @@ public class Simulation {
             System.out.println("\nЗаказ для " + customer.getClass().getSimpleName() + ":");
             System.out.println(cargo); // выводим информацию о грузе
 
-            Fruit[] selectedFruits = cargo.getFruits(); // покупатель выбирает фрукты из груза
+            Fruit[] printPurchases = cargo.getFruits(); // покупатель выбирает фрукты из груза
             System.out.println("\nПолученные фрукты для " + customer.getClass().getSimpleName() + ":");
-            for (Fruit fruit : selectedFruits) { // выводим полученные фрукты
+            for (Fruit fruit : printPurchases) { // выводим полученные фрукты
                 System.out.println(fruit);
             }
 

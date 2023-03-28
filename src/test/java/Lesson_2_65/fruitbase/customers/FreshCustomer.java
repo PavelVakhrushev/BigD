@@ -4,7 +4,7 @@ import Lesson_2_65.fruitbase.Cargo;
 import Lesson_2_65.fruitbase.fruits.Freshness;
 import Lesson_2_65.fruitbase.fruits.Fruit;
 
-class FreshCustomer extends Customer {
+public class FreshCustomer extends Customer {
     public FreshCustomer(String name) {
         super(name);
     }

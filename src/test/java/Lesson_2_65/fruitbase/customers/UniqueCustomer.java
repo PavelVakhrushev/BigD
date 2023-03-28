@@ -3,7 +3,7 @@ package Lesson_2_65.fruitbase.customers;
 import Lesson_2_65.fruitbase.Cargo;
 import Lesson_2_65.fruitbase.fruits.Fruit;
 
-class UniqueCustomer extends Customer {
+public class UniqueCustomer extends Customer {
     public UniqueCustomer(String name) {
         super(name);
     }

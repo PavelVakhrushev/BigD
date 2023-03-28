@@ -19,23 +19,26 @@ package Lesson_2_65.fruitbase.customers;
         реалиация метода takeFruits
             отбирает только уникальные фрукты, т.е. те, которых еще нет во внутреннем массиве */
 
+import Lesson_2_65.fruitbase.Cargo;
+import Lesson_2_65.fruitbase.fruits.Fruit;
+
 public abstract class Customer {
-    protected String[] purchases;
+    protected Fruit[] purchases;
+    protected int numOfPurchases;
     protected String name;
-    protected int index;
 
     public Customer(String name) {
+        this.purchases = new Fruit[10]; // начальный размер внутреннего массива 10
+        this.numOfPurchases = 0;
         this.name = name;
-        purchases = new String[10];
-        index = 0;
     }
 
-    public abstract void takeFruits(String[] fruits);
+    public abstract void takeFruits(Cargo cargo);
 
     public void printPurchases() {
-        System.out.println("Customer " + name + " purchased:");
-        for (int i = 0; i < index; i++) {
-            System.out.println("- " + purchases[i]);
+        System.out.println(name + "'s purchases:");
+        for (int i = 0; i < numOfPurchases; i++) {
+            System.out.println(purchases[i]);
         }
     }
 }

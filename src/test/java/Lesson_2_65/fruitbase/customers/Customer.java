@@ -35,10 +35,11 @@ public abstract class Customer {
 
     public abstract void takeFruits(Cargo cargo);
 
-    public void printPurchases() {
-        System.out.println(name + "'s purchases:");
+    public String printPurchases() {
+        System.out.println(name + " купил:");
         for (int i = 0; i < numOfPurchases; i++) {
             System.out.println(purchases[i]);
         }
+        return null;
     }
 }

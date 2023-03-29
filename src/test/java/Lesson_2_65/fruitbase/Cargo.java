@@ -87,8 +87,10 @@ public class Cargo {
     }
 
     public Fruit[] getFruits() {
-        Fruit[] result = new Fruit[size];
-        System.arraycopy(fruits, 0, result, 0, size);
+        Fruit[] result = new Fruit[fruits.length];
+        for (int i = 0; i < fruits.length; i++) {
+            result[i] = fruits[i];
+        }
         return result;
     }
 

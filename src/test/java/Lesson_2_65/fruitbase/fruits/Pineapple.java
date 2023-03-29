@@ -13,6 +13,6 @@ import java.math.BigDecimal;
 
 public class Pineapple extends Fruit {
     public Pineapple() {
-        super(20.0, BigDecimal.valueOf(300.0), "Pineapple", Freshness.FRESH);
+        super(1.0, BigDecimal.valueOf(300.0), "Pineapple", Freshness.FRESH);
     }
 }

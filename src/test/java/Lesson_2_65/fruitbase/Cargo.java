@@ -29,12 +29,12 @@ import java.util.List;
 
 public class Cargo {
     ArrayList<Fruit> fruits = new ArrayList<>();
-    private int totalWeight = 0;
+    private double totalWeight = 0;
     private BigDecimal totalPrice = BigDecimal.ZERO;
-    private int removedWeight = 0;
+    private double removedWeight = 0;
     private BigDecimal removedPrice = BigDecimal.ZERO;
 
-    public int getTotalWeight() {
+    public double getTotalWeight() {
         return totalWeight;
     }
 
@@ -42,7 +42,7 @@ public class Cargo {
         return totalPrice;
     }
 
-    public int getRemovedWeight() {
+    public double getRemovedWeight() {
         return removedWeight;
     }
 

@@ -12,7 +12,7 @@ public class UniqueCustomer extends Customer {
 
     @Override
     public List<Fruit> takeFruits(Cargo cargo) {
-        List<Fruit> cargoFruits = List.of(cargo.getFruits());
+        List<Fruit> cargoFruits = cargo.getFruits();
         for (Fruit fruit : cargoFruits) {
             if (!purchases.contains(fruit)) {
                 purchases.add(fruit);

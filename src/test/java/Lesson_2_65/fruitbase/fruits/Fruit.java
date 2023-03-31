@@ -49,10 +49,7 @@ public abstract class Fruit {
         Fruit that = (Fruit) o;
         if (freshness != that.freshness) return false;
         Fruit fruit = (Fruit) o;
-        return Objects.equals(name, fruit.name)&&
-                Objects.equals(price, fruit.price) &&
-                Objects.equals(weight, fruit.weight)&&
-                Objects.equals(freshness, fruit.freshness);
+        return Objects.equals(name, fruit.name) && Objects.equals(price, fruit.price) && Objects.equals(weight, fruit.weight);
     }
     @Override
     public int hashCode() {

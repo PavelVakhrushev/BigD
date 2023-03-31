@@ -15,16 +15,17 @@ import Lesson_2_65.fruitbase.customers.Customer;
 import Lesson_2_65.fruitbase.customers.FreshCustomer;
 import Lesson_2_65.fruitbase.customers.UniqueCustomer;
 import Lesson_2_65.fruitbase.fruits.Fruit;
+
 import java.util.List;
 
 public class Simulation {
     public static void main(String[] args) {
 
-
         if (args.length > 0) {
 
             FruitBase fruitBase = new FruitBase();
-            Customer[] customers = {new FreshCustomer("Покупатель свежих фруктов"), new UniqueCustomer("Покупатель уникальных фруктов")};
+            Customer[] customers = {new FreshCustomer("Покупатель свежих фруктов"),
+                    new UniqueCustomer("Покупатель уникальных фруктов")};
             for (Customer customer : customers) {
                 System.out.print("Информация по грузу:" + "\n");
                 Cargo cargo = fruitBase.takeOrder(args);
@@ -34,8 +35,10 @@ public class Simulation {
                 cargo.removeFruits(selectedFruits);
                 customer.printPurchases();
                 System.out.println("Информация об оставшемся грузе: ");
-                System.out.println("Вес оставшегося груза: " + (cargo.getTotalWeight() - cargo.getRemovedWeight()) + " кг");
-                System.out.println("Сумма оставшегося груза: " + (cargo.getTotalPrice().subtract(cargo.getRemovedPrice())) + " у.е." + "\n");
+                System.out.println("Вес оставшегося груза: " +
+                        (cargo.getTotalWeight() - cargo.getRemovedWeight()) + " кг");
+                System.out.println("Сумма оставшегося груза: " +
+                        (cargo.getTotalPrice().subtract(cargo.getRemovedPrice())) + " у.е." + "\n");
             }
 
         } else { // если заказ был пустой

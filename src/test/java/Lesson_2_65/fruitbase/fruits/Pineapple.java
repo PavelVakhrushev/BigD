@@ -12,7 +12,7 @@ package Lesson_2_65.fruitbase.fruits;
 import java.math.BigDecimal;
 
 public class Pineapple extends Fruit {
-    public Pineapple (){
+    public Pineapple() {
         this.name = "Pineapple";
         weight = 30.3;
         this.price = BigDecimal.valueOf(102.45);

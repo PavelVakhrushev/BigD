@@ -14,6 +14,7 @@ import Lesson_2_65.fruitbase.fruits.*;
 public class FruitCatalogue {
 
     Fruit[] fruit = {new Apple(), new Orange(), new Banana(), new Pineapple()};
+
     FruitCatalogue() {
     }
 

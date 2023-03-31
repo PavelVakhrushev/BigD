@@ -22,24 +22,30 @@ package Lesson_2_65.fruitbase.customers;
 import Lesson_2_65.fruitbase.Cargo;
 import Lesson_2_65.fruitbase.fruits.Fruit;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Customer {
-    protected Fruit[] purchases;
+    protected List<Fruit> purchases;
     protected int numOfPurchases;
     protected String name;
 
     public Customer(String name) {
-        this.purchases = new Fruit[10]; // начальный размер внутреннего массива 10
-        this.numOfPurchases = 0;
+        this.purchases = new ArrayList<>();
         this.name = name;
     }
 
-    public abstract void takeFruits(Cargo cargo);
+    public abstract List<Fruit> takeFruits(Cargo cargo);
 
-    public String printPurchases() {
-        System.out.println(name + " купил:");
-        for (int i = 0; i < numOfPurchases; i++) {
-            System.out.println(purchases[i]);
+    public void printPurchases() {
+        if (purchases.isEmpty()) {
+            System.out.println(name + " ещё ничего не купил.");
+        } else {
+            System.out.println(name + " купил:");
+            for (Fruit fruit : purchases) {
+                System.out.println(fruit.getName());
+            }
+            System.out.println();
         }
-        return null;
     }
 }

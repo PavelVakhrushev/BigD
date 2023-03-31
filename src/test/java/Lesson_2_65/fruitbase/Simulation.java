@@ -15,31 +15,31 @@ import Lesson_2_65.fruitbase.customers.Customer;
 import Lesson_2_65.fruitbase.customers.FreshCustomer;
 import Lesson_2_65.fruitbase.customers.UniqueCustomer;
 import Lesson_2_65.fruitbase.fruits.Fruit;
-
-import java.awt.*;
+import java.util.List;
 
 public class Simulation {
     public static void main(String[] args) {
-        FruitBase fruitBase = new FruitBase(); // создаем новую фруктовую базу
 
-        // создаем массив покупателей
-        Customer[] customers = new Customer[] {new FreshCustomer("Василий"), new UniqueCustomer("Анна")};
 
-        for (Customer customer : customers) {
-            // выполняем заказ и формируем груз
-            Cargo cargo = fruitBase.takeOrder(customer.printPurchases());
+        if (args.length > 0) {
 
-            // выводим информацию о грузе
-            System.out.println("Груз: " + cargo);
+            FruitBase fruitBase = new FruitBase();
+            Customer[] customers = {new FreshCustomer("Покупатель свежих фруктов"), new UniqueCustomer("Покупатель уникальных фруктов")};
+            for (Customer customer : customers) {
+                System.out.print("Информация по грузу:" + "\n");
+                Cargo cargo = fruitBase.takeOrder(args);
+                System.out.println("Общий вес заказа: " + cargo.getTotalWeight() + " кг");
+                System.out.println("Общая стоимость заказа: " + cargo.getTotalPrice() + " у.е." + "\n");
+                List<Fruit> selectedFruits = customer.takeFruits(cargo);
+                cargo.removeFruits(selectedFruits);
+                customer.printPurchases();
+                System.out.println("Информация об оставшемся грузе: ");
+                System.out.println("Вес оставшегося груза: " + (cargo.getTotalWeight() - cargo.getRemovedWeight()) + " кг");
+                System.out.println("Сумма оставшегося груза: " + (cargo.getTotalPrice().subtract(cargo.getRemovedPrice())) + " у.е." + "\n");
+            }
 
-            // покупатель выбирает из груза интересующие его фрукты
-            String selectedFruits = customer.printPurchases();
-
-            // покупатель выводит полученные фрукты
-            System.out.println("Выбранные фрукты: " + selectedFruits);
-
-            // выводим информацию об оставшемся грузе
-            System.out.println("Оставшийся груз: " + cargo);
+        } else { // если заказ был пустой
+            System.out.println("В заказ ничего не добавлено!");
         }
     }
 }

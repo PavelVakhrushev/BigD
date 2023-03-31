@@ -19,64 +19,50 @@ package Lesson_2_65.fruitbase.fruits;
     */
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public abstract class Fruit {
-    double weight;
-    BigDecimal price;
-    String name;
-
-    Freshness freshness; // добавляем поле для состояния свежести фрукта
-
-    public Fruit(double weight, BigDecimal price, String name, Freshness freshness) {
-        this.weight = weight;
-        this.price = price;
-        this.name = name;
-        this.freshness = Freshness.FRESH;
-    }
+    protected double weight;
+    protected BigDecimal price;
+    protected String name;
+    protected Freshness freshness;
 
     public double getWeight() {
-        return this.weight;
+        return weight;
     }
-
     public BigDecimal getPrice() {
-        return this.price;
+        return price;
     }
-
     public String getName() {
-        return this.name;
+        return name;
     }
-
     public Freshness getFreshness() {
-        return this.freshness;
+        return freshness;
     }
-
     public void setFreshness(Freshness freshness) {
         this.freshness = freshness;
-
     }
-
-    public boolean equals(Object obj) {
-        if (obj == this) return true;
-        if (!(obj instanceof Fruit other)) return false;
-
-        return Double.compare(weight, other.weight) == 0 &&
-                price.equals(other.price) &&
-                name.equals(other.name) &&
-                freshness == other.freshness;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Fruit that = (Fruit) o;
+        if (freshness != that.freshness) return false;
+        Fruit fruit = (Fruit) o;
+        return Objects.equals(name, fruit.name)&&
+                Objects.equals(price, fruit.price) &&
+                Objects.equals(weight, fruit.weight)&&
+                Objects.equals(freshness, fruit.freshness);
     }
-
+    @Override
     public int hashCode() {
-        int result = 17;
-        long weightBits = Double.doubleToLongBits(weight);
-        result = 31 * result + (int) (weightBits ^ (weightBits >>> 32));
-        result = 31 * result + price.hashCode();
-        result = 31 * result + name.hashCode();
-        result = 31 * result + freshness.hashCode();
-        return result;
+        return Objects.hash(name, price, weight, freshness);
     }
-
     public boolean isFresh() {
-        return freshness == Freshness.FRESH;
+        if (freshness == Freshness.FRESH) {
+            return true;
+        }
+        return false;
     }
 
 }

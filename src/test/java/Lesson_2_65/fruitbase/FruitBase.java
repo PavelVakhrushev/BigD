@@ -28,25 +28,14 @@ public class FruitBase {
         this.fruitCatalogue = new FruitCatalogue();
     }
 
-    public Cargo takeOrder(String... orderItems) {
+    public Cargo takeOrder(String... orderFruits) {
         Cargo cargo = new Cargo(); // создаем новый груз
-        for (String orderItem : orderItems) {
-            Fruit fruit = this.fruitCatalogue.findFruit(orderItem); // ищем фрукт по его названию
+        for (String orderFruit : orderFruits) {
+            Fruit fruit = fruitCatalogue.findFruit(orderFruit); // ищем фрукт по его названию
             if (fruit != null) { // если фрукт найден
                 cargo.addFruit(fruit); // добавляем его в груз
             }
         }
         return cargo; // возвращаем груз со всеми найденными фруктами
     }
-
-
-   // public static void main(String[] args) {
-   //     FruitBase fruitBase = new FruitBase(); // создаем новую фруктовыю базу
-   //     if (args.length > 0) { // проверка наличия заказа от пользователя
-   //         Cargo cargo = fruitBase.takeOrder(args); // заказ передается в метод takeOrder
-   //         System.out.println(cargo + " у.е.");
-   //     } else { // если заказ был пустой
-   //         System.out.println("В заказ ничего не добавлено!");
-   //     }
-   // }
 }

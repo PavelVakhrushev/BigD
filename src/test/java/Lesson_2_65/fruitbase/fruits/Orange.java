@@ -12,7 +12,10 @@ package Lesson_2_65.fruitbase.fruits;
 import java.math.BigDecimal;
 
 public class Orange extends Fruit {
-    public Orange() {
-        super(0.7, BigDecimal.valueOf(700.60), "orange", Freshness.FRESH);
+    public Orange (){
+        this.name = "Orange";
+        weight = 15.5;
+        price = BigDecimal.valueOf(78.65);
+        this.freshness = Freshness.FRESH;
     }
 }

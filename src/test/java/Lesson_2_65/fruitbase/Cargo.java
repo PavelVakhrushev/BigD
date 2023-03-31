@@ -22,86 +22,51 @@ package Lesson_2_65.fruitbase;
 import Lesson_2_65.fruitbase.fruits.Fruit;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class Cargo {
-    private Fruit[] fruits;
-    private int[] counts;
-    private int size;
+    ArrayList<Fruit> fruits = new ArrayList<>();
+    private int totalWeight = 0;
+    private BigDecimal totalPrice = BigDecimal.ZERO;
+    private int removedWeight = 0;
+    private BigDecimal removedPrice = BigDecimal.ZERO;
 
-    public Cargo() {
-        fruits = new Fruit[10];
-        counts = new int[10];
-        size = 0;
+    public int getTotalWeight() {
+        return totalWeight;
     }
 
-    public double getWeight() {
-        double weight = 0;
-        for (int i = 0; i < size; i++) {
-            weight += fruits[i].getWeight() * counts[i];
-        }
-        return weight;
+    public BigDecimal getTotalPrice() {
+        return totalPrice;
     }
 
-    public BigDecimal getPrice() {
-        BigDecimal price = BigDecimal.valueOf(0);
-        for (int i = 0; i < size; i++) {
-            price = price.add(fruits[i].getPrice().multiply(BigDecimal.valueOf(counts[i])));
-        }
-        return price;
+    public int getRemovedWeight() {
+        return removedWeight;
     }
 
-    public void addFruit(Fruit fruit) {
-        for (int i = 0; i < size; i++) {
-            if (fruits[i].getName().equals(fruit.getName())) {
-                counts[i]++;
-                return;
-            }
-        }
-        if (size == fruits.length) {
-            fruits = Arrays.copyOf(fruits, fruits.length * 2);
-            counts = Arrays.copyOf(counts, counts.length * 2);
-        }
-        fruits[size] = fruit;
-        counts[size] = 1;
-        size++;
+    public BigDecimal getRemovedPrice() {
+        return removedPrice;
     }
 
-    public void removeFruit(String name) {
-        for (int i = 0; i < size; i++) {
-            if (fruits[i].getName().equals(name)) {
-                counts[i]--;
-                if (counts[i] == 0) {
-                    double weight = fruits[i].getWeight();
-                    for (int j = i; j < size - 1; j++) {
-                        fruits[j] = fruits[j + 1];
-                        counts[j] = counts[j + 1];
-                    }
-                    size--;
-                    return;
-                }
-                return;
-            }
+    void addFruit(Fruit fruit) {
+        fruits.add(fruit);
+        totalWeight += fruit.getWeight();
+        totalPrice = totalPrice.add(fruit.getPrice());
+    }
+
+    public List<Fruit> getFruits() {
+        return fruits;
+    }
+
+    void removeFruits(List<Fruit> selectedFruits) {
+        fruits.removeIf(selectedFruits::contains);
+        for (Fruit fruit : selectedFruits) {
+            removedWeight += fruit.getWeight();
+            removedPrice = removedPrice.add(fruit.getPrice());
         }
     }
 
-    public Fruit[] getFruits() {
-        Fruit[] result = new Fruit[fruits.length];
-        for (int i = 0; i < fruits.length; i++) {
-            result[i] = fruits[i];
-        }
-        return result;
-    }
-
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < size; i++) {
-            sb.append(counts[i]).append(" ").append(fruits[i].getName()).append("\n");
-        }
-        sb.append("Общий вес: ").append(getWeight()).append(" кг." + "\n");
-        sb.append("Итоговая стоимость: ").append(getPrice());
-        return sb.toString();
-    }
 }
 

@@ -11,17 +11,16 @@ package Lesson_2_65.fruitbase;
 
 import Lesson_2_65.fruitbase.fruits.*;
 
-class FruitCatalogue {
-    private Fruit[] fruits;
+public class FruitCatalogue {
 
-    public FruitCatalogue() {
-        this.fruits = new Fruit[]{new Apple(), new Orange(), new Banana(), new Pineapple()};
+    Fruit[] fruit = {new Apple(), new Orange(), new Banana(), new Pineapple()};
+    FruitCatalogue() {
     }
 
-    Fruit findFruit(String name) {
-        for (Fruit fruit : this.fruits) {
-            if (fruit.getName().equalsIgnoreCase(name)) {
-                return fruit;
+    public Fruit findFruit(String fruitName) {
+        for (Fruit f : fruit) {
+            if (f.getName().equals(fruitName)) {
+                return f;
             }
         }
         return null;

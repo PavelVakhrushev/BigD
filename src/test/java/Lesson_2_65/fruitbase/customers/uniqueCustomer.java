@@ -5,8 +5,8 @@ import Lesson_2_65.fruitbase.fruits.Fruit;
 
 import java.util.List;
 
-public class UniqueCustomer extends Customer {
-    public UniqueCustomer(String name) {
+public class uniqueCustomer extends Customer {
+    public uniqueCustomer(String name) {
         super(name);
     }
 

@@ -13,9 +13,9 @@ import java.math.BigDecimal;
 
 public class Pineapple extends Fruit {
     public Pineapple() {
-        this.name = "Pineapple";
-        weight = 30.3;
-        this.price = BigDecimal.valueOf(102.45);
-        this.freshness = Freshness.SPOILED;
+        name = "Pineapple";
+        weight = 55.5;
+        price = BigDecimal.valueOf(635.26);
+        freshness = Freshness.FRESH;
     }
 }

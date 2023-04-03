@@ -13,9 +13,9 @@ import java.math.BigDecimal;
 
 public class Apple extends Fruit {
     public Apple() {
-        this.name = "Apple";
-        weight = 5.54;
-        price = BigDecimal.valueOf(75);
-        this.freshness = Freshness.FRESH;
+        name = "Apple";
+        weight = 10.54;
+        price = BigDecimal.valueOf(500);
+        freshness = Freshness.FRESH;
     }
 }

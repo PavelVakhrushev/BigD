@@ -1,14 +1,13 @@
 package Lesson_2_65.fruitbase.customers;
 
 import Lesson_2_65.fruitbase.Cargo;
-import Lesson_2_65.fruitbase.fruits.Freshness;
 import Lesson_2_65.fruitbase.fruits.Fruit;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FreshCustomer extends Customer {
-    public FreshCustomer(String name) {
+public class freshCustomer extends Customer {
+    public freshCustomer(String name) {
         super(name);
     }
 

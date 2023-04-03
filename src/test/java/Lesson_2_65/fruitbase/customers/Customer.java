@@ -27,7 +27,6 @@ import java.util.List;
 
 public abstract class Customer {
     protected List<Fruit> purchases;
-    protected int numOfPurchases;
     protected String name;
 
     public Customer(String name) {
@@ -39,7 +38,7 @@ public abstract class Customer {
 
     public void printPurchases() {
         if (purchases.isEmpty()) {
-            System.out.println(name + " ещё ничего не купил.");
+            System.out.println(name + " пока ничего не покупал.");
         } else {
             System.out.println(name + " купил:");
             for (Fruit fruit : purchases) {

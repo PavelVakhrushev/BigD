@@ -29,9 +29,9 @@ public abstract class Customer {
     protected List<Fruit> purchases;
     protected String name;
 
-    public Customer(String name) {
-        this.purchases = new ArrayList<>();
+    Customer(String name) {
         this.name = name;
+        purchases = new ArrayList<>();
     }
 
     public abstract List<Fruit> takeFruits(Cargo cargo);

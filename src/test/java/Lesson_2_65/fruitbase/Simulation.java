@@ -12,8 +12,8 @@ package Lesson_2_65.fruitbase;
         выводится информации об оставшемся грузе*/
 
 import Lesson_2_65.fruitbase.customers.Customer;
-import Lesson_2_65.fruitbase.customers.freshCustomer;
-import Lesson_2_65.fruitbase.customers.uniqueCustomer;
+import Lesson_2_65.fruitbase.customers.FreshCustomer;
+import Lesson_2_65.fruitbase.customers.UniqueCustomer;
 import Lesson_2_65.fruitbase.fruits.Fruit;
 
 import java.util.List;
@@ -24,21 +24,20 @@ public class Simulation {
         if (args.length > 0) {
 
             FruitBase fruitBase = new FruitBase();
-            Customer[] customers = {new freshCustomer("Покупатель свежих фруктов"),
-                    new uniqueCustomer("Покупатель уникальных фруктов")};
-            for (Customer customer : customers) {
-                System.out.print("Информация по грузу:" + "\n");
+            Customer[] customers = {new FreshCustomer("Покупатель свежих фруктов"),
+                    new UniqueCustomer("Покупатель уникальных фруктов")};
+            for (int i = 0; i < customers.length; i++) {
                 Cargo cargo = fruitBase.takeOrder(args);
-                System.out.println("Вес заказа, всего: " + cargo.getTotalWeight() + " кг.");
-                System.out.println("Стоимость заказа, всего: " + cargo.getTotalPrice() + " у.е." + "\n");
-                List<Fruit> selectedFruits = customer.takeFruits(cargo);
-                cargo.removeFruits(selectedFruits);
-                customer.printPurchases();
-                System.out.println("Оставшийся груз: ");
-                System.out.println("Вес оставшегося груза: " +
-                        (cargo.getTotalWeight() - cargo.getRemovedWeight()) + " кг.");
-                System.out.println("Стоимость оставшегося груза: " +
-                        (cargo.getTotalPrice().subtract(cargo.getRemovedPrice())) + " у.е." + "\n");
+                System.out.print("Груз до покупок: " + "\n");
+                System.out.println("Вес, всего: " + cargo.getWeight() + " кг.");
+                System.out.println("Стоимость, всего: " + cargo.getPrice() + " у.е." + "\n");
+                customers[i].takeFruits(cargo);
+                System.out.println("");
+                System.out.print(customers[i] + " купил: ");
+                customers[i].printPurchases();
+                System.out.println("Груз после покупок: ");
+                System.out.println(cargo);
+                System.out.println("");
             }
 
         } else {

@@ -6,8 +6,8 @@ import Lesson_2_65.fruitbase.fruits.Fruit;
 import java.util.ArrayList;
 import java.util.List;
 
-public class freshCustomer extends Customer {
-    public freshCustomer(String name) {
+public class FreshCustomer extends Customer {
+    public FreshCustomer(String name) {
         super(name);
     }
 
@@ -20,7 +20,8 @@ public class freshCustomer extends Customer {
             }
         }
         purchases.addAll(freshFruits);
-        return purchases;
+        cargo.removeFruits(freshFruits);
+        return freshFruits;
     }
 }
 

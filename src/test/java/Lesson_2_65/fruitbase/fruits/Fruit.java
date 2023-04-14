@@ -65,10 +65,7 @@ public abstract class Fruit {
     }
 
     public boolean isFresh() {
-        if (freshness == Freshness.FRESH) {
-            return true;
-        }
-        return false;
-    }
+        return freshness == Freshness.FRESH;
 
+    }
 }

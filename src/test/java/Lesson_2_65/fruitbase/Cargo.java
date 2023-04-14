@@ -27,44 +27,54 @@ import java.util.List;
 
 
 public class Cargo {
-    ArrayList<Fruit> fruits = new ArrayList<>();
-    private double totalWeight = 0;
-    private BigDecimal totalPrice = BigDecimal.ZERO;
-    private double removedWeight = 0;
-    private BigDecimal removedPrice = BigDecimal.ZERO;
+    private List<Fruit> foundFruits;
 
-    public double getTotalWeight() {
-        return totalWeight;
+    Cargo() {
+        foundFruits = new ArrayList<>();
     }
 
-    public BigDecimal getTotalPrice() {
+    public double getWeight() {
+        double sum = 0;
+        for (Fruit foundFruit : foundFruits) {
+            sum = sum + foundFruit.getWeight();
+        }
+        return sum;
+    }
+
+    public BigDecimal getPrice() {
+        BigDecimal totalPrice = new BigDecimal(0);
+        for (Fruit foundFruit : foundFruits) {
+            totalPrice = totalPrice.add(foundFruit.getPrice());
+        }
         return totalPrice;
     }
 
-    public double getRemovedWeight() {
-        return removedWeight;
-    }
 
-    public BigDecimal getRemovedPrice() {
-        return removedPrice;
-    }
-
-    void addFruit(Fruit fruit) {
-        fruits.add(fruit);
-        totalWeight += fruit.getWeight();
-        totalPrice = totalPrice.add(fruit.getPrice());
+    public void addFruit(Fruit fruit) {
+        List<Fruit> newFoundFruits = new ArrayList<>(foundFruits);
+        newFoundFruits.add(fruit);
+        foundFruits = newFoundFruits;
     }
 
     public List<Fruit> getFruits() {
-        return fruits;
+        return foundFruits;
     }
 
-    void removeFruits(List<Fruit> selectedFruits) {
-        fruits.removeIf(selectedFruits::contains);
-        for (Fruit fruit : selectedFruits) {
-            removedWeight += fruit.getWeight();
-            removedPrice = removedPrice.add(fruit.getPrice());
+    public void removeFruits(List<Fruit> fruits) {
+        for (Fruit fruit : fruits) {
+            foundFruits.remove(fruit);
         }
+    }
+
+
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        for (Fruit currentCargoFruit : foundFruits) {
+            s.append(currentCargoFruit.getName()).append(" ");
+        }
+        String weight = String.format("%.2f", this.getWeight());
+        return "Информация о грузе(" + foundFruits.size() + "): " + s + "\n" +
+                "Вес: " + weight + "  " + "Цена: " + this.getPrice();
     }
 
 }

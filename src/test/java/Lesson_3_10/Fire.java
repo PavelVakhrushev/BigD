@@ -1,20 +1,28 @@
 package Lesson_3_10;
 
-class Fire extends NatureElement {
-    boolean connect(NatureElement elem) {
-        if (elem instanceof Air) {
-            System.out.println("Fire + Air = Energy");
-            return true;
-        } else if (elem instanceof Earth) {
-            System.out.println("Fire + Earth = Lava");
-            return true;
-        } else if (elem instanceof Water) {
-            System.out.println("Fire + Water = Steam");
-            return true;
-        } else if (elem instanceof Fire) {
-            System.out.println("Не производит новый элемент");
-            return true;
+public class Fire extends NatureElement {
+
+    @Override
+    NatureElement connect(NatureElement element) {
+        if (element instanceof Fire) {
+            System.out.println("Fire + Fire не производит новый элемент");
+            return null;
         }
-        return false;
+        if (element instanceof Air) {
+            System.out.println("Fire + Air = Energy");
+            return new Energy();
+        }
+        if (element instanceof Earth) {
+            System.out.println("Fire + Earth = Lava");
+            return new Lava();
+        }
+        if (element instanceof Water) {
+            System.out.println("Fire + Water = Steam");
+            return new Steam();
+        } else {
+            System.out.println("Неизвестный элемент");
+            return null;
+        }
     }
+
 }

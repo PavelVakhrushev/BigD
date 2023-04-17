@@ -1,22 +1,25 @@
 package Lesson_3_10;
 
-abstract  public class NatureElement {
-    abstract boolean connect(NatureElement elem);
+class NatureElement {
 
-    public static NatureElement create(String elementName) {
+    NatureElement connect(NatureElement element) {
+        return new NatureElement();
+    }
+
+    static NatureElement create(String elementName) {
         switch (elementName) {
             case "Fire":
                 return new Fire();
-            case "Air":
-                return new Air();
-            case "Earth":
-                return new Earth();
             case "Water":
                 return new Water();
+            case "Earth":
+                return new Earth();
+            case "Air":
+                return new Air();
             default:
                 System.out.println("Неизвестный элемент");
                 return null;
         }
+
     }
 }
-

@@ -5,9 +5,7 @@ public class Alchemy {
         if (args.length == 0 || args.length % 2 != 0) {
             System.out.println("Неверное количество аргументов");
         }
-        NatureElement[] elems = createNatureElements(args);
-        NatureElement[] result = connectElements(elems);
-        printResultElements(result);
+        connectElements(createNatureElements(args));
     }
 
     private static NatureElement[] createNatureElements(String[] args) {
@@ -25,18 +23,11 @@ public class Alchemy {
         NatureElement[] result = new NatureElement[elems.length / 2];
         int j = 0;
         for (int i = 0; i < elems.length; i += 2) {
-            if (elems[i].connect(elems[i + 1])) {
-                result[j++] = NatureElement.create(elems[i].getClass().getSimpleName() + elems[i + 1].getClass().getSimpleName());
+            NatureElement connected = elems[i].connect(elems[i + 1]);
+            if (connected != null) {
+                result[j++] = connected;
             }
         }
         return result;
-    }
-
-    private static void printResultElements(NatureElement[] result) {
-        for (NatureElement elem : result) {
-            if (elem != null) {
-                System.out.println(elem.getClass().getSimpleName());
-            }
-        }
     }
 }

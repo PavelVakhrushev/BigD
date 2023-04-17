@@ -19,26 +19,22 @@ package Lesson_2_65.fruitbase.customers;
         реалиация метода takeFruits
             отбирает только уникальные фрукты, т.е. те, которых еще нет во внутреннем массиве */
 
+
 import Lesson_2_65.fruitbase.Cargo;
 import Lesson_2_65.fruitbase.fruits.Fruit;
-
 import java.util.ArrayList;
 import java.util.List;
-
-public abstract class Customer {
+abstract public class Customer {
     protected List<Fruit> purchases;
     protected String name;
-
-    Customer(String name) {
+    public Customer(String name) {
+        this.purchases = new ArrayList<>();
         this.name = name;
-        purchases = new ArrayList<>();
     }
-
     public abstract List<Fruit> takeFruits(Cargo cargo);
-
     public void printPurchases() {
         if (purchases.isEmpty()) {
-            System.out.println(name + " пока ничего не покупал.");
+            System.out.println(name + " ещё ничего не купил.");
         } else {
             System.out.println(name + " купил:");
             for (Fruit fruit : purchases) {
@@ -48,3 +44,4 @@ public abstract class Customer {
         }
     }
 }
+

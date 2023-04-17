@@ -21,21 +21,21 @@ package Lesson_2_65.fruitbase;
 import Lesson_2_65.fruitbase.fruits.Fruit;
 
 public class FruitBase {
+    FruitCatalogue fruitCatalogue;
 
-    private final FruitCatalogue fruitCatalogue;
-
-    public FruitBase() {  // конструктор без параметров
+    FruitBase() {
         this.fruitCatalogue = new FruitCatalogue();
     }
 
-    public Cargo takeOrder(String... orderFruits) {
-        Cargo cargo = new Cargo(); // создаем новый груз
+    public Cargo takeOrder(String[] orderFruits) {
+        Cargo cargo = new Cargo();
         for (String orderFruit : orderFruits) {
-            Fruit fruit = fruitCatalogue.findFruit(orderFruit); // ищем фрукт по его названию
-            if (fruit != null) { // если фрукт найден
-                cargo.addFruit(fruit); // добавляем его в груз
+            Fruit f = fruitCatalogue.findFruit(orderFruit);
+            if (f != null) {
+                cargo.addFruit(f);
+                System.out.println(f.getName());
             }
         }
-        return cargo; // возвращаем груз со всеми найденными фруктами
+        return cargo;
     }
 }

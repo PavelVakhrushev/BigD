@@ -11,6 +11,7 @@ package Lesson_2_65.fruitbase;
         покупатель выводит полученные фрукты
         выводится информации об оставшемся грузе*/
 
+
 import Lesson_2_65.fruitbase.customers.Customer;
 import Lesson_2_65.fruitbase.customers.FreshCustomer;
 import Lesson_2_65.fruitbase.customers.UniqueCustomer;
@@ -20,28 +21,24 @@ import java.util.List;
 
 public class Simulation {
     public static void main(String[] args) {
-
         if (args.length > 0) {
-
             FruitBase fruitBase = new FruitBase();
             Customer[] customers = {new FreshCustomer("Покупатель свежих фруктов"),
                     new UniqueCustomer("Покупатель уникальных фруктов")};
-            for (int i = 0; i < customers.length; i++) {
+            for (Customer customer : customers) {
+                System.out.print("Информация по грузу:" + "\n");
                 Cargo cargo = fruitBase.takeOrder(args);
-                System.out.print("Груз до покупок: " + "\n");
-                System.out.println("Вес, всего: " + cargo.getWeight() + " кг.");
-                System.out.println("Стоимость, всего: " + cargo.getPrice() + " у.е." + "\n");
-                customers[i].takeFruits(cargo);
-                System.out.println("");
-                System.out.print(customers[i] + " купил: ");
-                customers[i].printPurchases();
-                System.out.println("Груз после покупок: ");
-                System.out.println(cargo);
-                System.out.println("");
+                System.out.println("Общий вес заказа: " + cargo.getTotalWeight() + " кг");
+                System.out.println("Общая стоимость заказа: " + cargo.getTotalPrice() + " у.е." + "\n");
+                customer.takeFruits(cargo);
+                customer.printPurchases();
+                System.out.println("Информация об оставшемся грузе: ");
+                System.out.println("Вес оставшегося груза: " +
+                        (cargo.getTotalWeight() - cargo.getRemovedWeight()) + " кг");
+                System.out.println("Сумма оставшегося груза: " +
+                        (cargo.getTotalPrice().subtract(cargo.getRemovedPrice())) + " у.е." + "\n");
             }
+        } else System.out.println("В заказ ничего не добавлено!");
 
-        } else {
-            System.out.println("В заказ ничего не добавлено!");
-        }
     }
 }

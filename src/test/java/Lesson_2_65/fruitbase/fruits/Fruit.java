@@ -21,7 +21,7 @@ package Lesson_2_65.fruitbase.fruits;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public abstract class Fruit {
+abstract public class Fruit {
     protected double weight;
     protected BigDecimal price;
     protected String name;
@@ -39,14 +39,6 @@ public abstract class Fruit {
         return name;
     }
 
-    public Freshness getFreshness() {
-        return freshness;
-    }
-
-    public void setFreshness(Freshness freshness) {
-        this.freshness = freshness;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -54,9 +46,10 @@ public abstract class Fruit {
         Fruit that = (Fruit) o;
         if (freshness != that.freshness) return false;
         Fruit fruit = (Fruit) o;
-        return Objects.equals(name, fruit.name)
-                && Objects.equals(price, fruit.price)
-                && Objects.equals(weight, fruit.weight);
+        return Objects.equals(name, fruit.name) &&
+                Objects.equals(price, fruit.price) &&
+                Objects.equals(weight, fruit.weight) &&
+                Objects.equals(freshness, fruit.freshness);
     }
 
     @Override
@@ -66,6 +59,5 @@ public abstract class Fruit {
 
     public boolean isFresh() {
         return freshness == Freshness.FRESH;
-
     }
 }

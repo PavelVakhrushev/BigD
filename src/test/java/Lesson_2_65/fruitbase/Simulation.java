@@ -15,9 +15,6 @@ package Lesson_2_65.fruitbase;
 import Lesson_2_65.fruitbase.customers.Customer;
 import Lesson_2_65.fruitbase.customers.FreshCustomer;
 import Lesson_2_65.fruitbase.customers.UniqueCustomer;
-import Lesson_2_65.fruitbase.fruits.Fruit;
-
-import java.util.List;
 
 public class Simulation {
     public static void main(String[] args) {

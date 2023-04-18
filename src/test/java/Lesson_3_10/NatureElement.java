@@ -20,6 +20,5 @@ class NatureElement {
                 System.out.println("Неизвестный элемент");
                 return null;
         }
-
     }
 }

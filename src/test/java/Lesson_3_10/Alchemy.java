@@ -1,33 +1,29 @@
 package Lesson_3_10;
 
-public class Alchemy {
+class Alchemy {
     public static void main(String[] args) {
-        if (args.length == 0 || args.length % 2 != 0) {
-            System.out.println("Неверное количество аргументов");
+        if (args.length < 2) {
+            System.out.println("Введите другие элементы");
         }
-        connectElements(createNatureElements(args));
-    }
-
-    private static NatureElement[] createNatureElements(String[] args) {
-        NatureElement[] elems = new NatureElement[args.length];
+        //проверяем что для всех переданных аргументов возможно создать элемент
+        NatureElement[] elements = new NatureElement[args.length];
         for (int i = 0; i < args.length; i++) {
-            elems[i] = NatureElement.create(args[i]);
-            if (elems[i] == null) {
-                System.out.println("Неизвестный элемент: " + args[i]);
-            }
+            NatureElement.create(args[i]);
+            elements[i] = NatureElement.create(args[i]);
         }
-        return elems;
-    }
 
-    private static NatureElement[] connectElements(NatureElement[] elems) {
-        NatureElement[] result = new NatureElement[elems.length / 2];
-        int j = 0;
-        for (int i = 0; i < elems.length; i += 2) {
-            NatureElement connected = elems[i].connect(elems[i + 1]);
-            if (connected != null) {
-                result[j++] = connected;
+        //Разбиваем массив на пары
+        if (elements.length % 2 == 0) {
+            for (int i = 0; i < elements.length; i += 2) {
+                assert elements[i] != null;
+                elements[i].connect(elements[i + 1]);
+            }
+        } else {
+            //Если нечёт. количество элементов последний не учитываем
+            for (int i = 0; i < elements.length - 1; i += 2) {
+                assert elements[i] != null;
+                elements[i].connect(elements[i + 1]);
             }
         }
-        return result;
     }
 }

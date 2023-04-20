@@ -18,10 +18,12 @@ package Lesson_3_10_2.fruitbase.fruits;
         - метод isFresh - возвращает true, если параметр freshness имеет состояние FRESH
     */
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-abstract public class Fruit {
+abstract public class Fruit implements Serializable {
+    private static final long serialVersionUID = 1L;
     protected double weight;
     protected BigDecimal price;
     protected String name;

@@ -11,7 +11,12 @@ package Lesson_3_10_2.fruitbase;
 
 import Lesson_3_10_2.fruitbase.fruits.*;
 
-public class FruitCatalogue {
+import java.io.*;
+import java.util.Arrays;
+
+public class FruitCatalogue implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     Fruit[] fruit = {new Apple(), new Banana(), new Orange(), new Pineapple()};
 
     FruitCatalogue() {
@@ -25,4 +30,12 @@ public class FruitCatalogue {
         }
         return null;
     }
+
+    @Override
+    public String toString() {
+        return "FruitCatalogue{" +
+                "fruit=" + Arrays.toString(fruit) +
+                '}';
+    }
+
 }

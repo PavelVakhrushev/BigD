@@ -9,9 +9,12 @@ package Lesson_3_10_2.fruitbase.fruits;
     Каждый класс наследуется от Fruit
     В конструкторе класса устанавливаются значения веса, цены, названия для фрукта*/
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Orange extends Fruit {
+public class Orange extends Fruit implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     public Orange() {
         name = "Orange";
         weight = 40.5;

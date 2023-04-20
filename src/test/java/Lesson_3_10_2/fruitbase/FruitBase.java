@@ -20,7 +20,11 @@ package Lesson_3_10_2.fruitbase;
 
 import Lesson_3_10_2.fruitbase.fruits.Fruit;
 
-public class FruitBase {
+import java.io.*;
+
+public class FruitBase implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     FruitCatalogue fruitCatalogue;
 
     FruitBase() {
@@ -37,5 +41,33 @@ public class FruitBase {
             }
         }
         return cargo;
+    }
+
+    public void exportCatalogue(String fileName) {
+        try {
+            FileOutputStream fileOut = new FileOutputStream(fileName);
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(fruitCatalogue);
+            out.close();
+            fileOut.close();
+            System.out.println("Каталог экспортирован");
+            System.out.println(fruitCatalogue); //для проверки значений
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void importCatalogue(String fileName) {
+        try {
+            FileInputStream fileIn = new FileInputStream(fileName);
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            fruitCatalogue = (FruitCatalogue) in.readObject();
+            in.close();
+            fileIn.close();
+            System.out.println("Каталог импортирован");
+            System.out.println(fruitCatalogue); //для проверки значений
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
